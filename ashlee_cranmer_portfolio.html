@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashlee Cranmer · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --dark: #1A1A2E;
+    --px-pink: #FF6B9D;
+    --px-cyan: #00F5FF;
+    --px-yellow: #FFE600;
+    --px-green: #39FF14;
+    --px-purple: #B44FFF;
+    --px-orange: #FF8C42;
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--dark);
+    border-bottom: 4px solid var(--px-yellow);
+    padding: 0 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: var(--px-yellow);
+    letter-spacing: 1px;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.65;
+    transition: opacity 0.15s, color 0.15s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--px-cyan); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    padding: 5rem 3rem 4.5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  /* Pixel deco blobs */
+  .hero-deco {
+    position: absolute;
+    right: 3rem; top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hero-tag {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    color: var(--px-cyan);
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .hero-tag::before { content: '> '; color: var(--px-green); }
+
+  .hero-name {
+    font-family: var(--font-pixel);
+    font-size: clamp(14px, 2.2vw, 20px);
+    color: #fff;
+    line-height: 2.2;
+    margin-bottom: 0.25rem;
+    position: relative;
+  }
+  .hero-name .pink  { color: var(--px-pink); }
+  .hero-name .yellow { color: var(--px-yellow); }
+
+  .hero-title {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--px-cyan);
+    margin-bottom: 1.25rem;
+    position: relative;
+    letter-spacing: 1px;
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    max-width: 540px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
+  .badge {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    padding: 8px 14px;
+    border: 2px solid;
+    letter-spacing: 1px;
+    cursor: default;
+    transition: transform 0.1s;
+  }
+  .badge:hover { transform: translate(-2px, -2px); }
+  .b-pink   { color: var(--px-pink);   border-color: var(--px-pink); }
+  .b-cyan   { color: var(--px-cyan);   border-color: var(--px-cyan); }
+  .b-green  { color: var(--px-green);  border-color: var(--px-green); }
+  .b-yellow { color: var(--px-yellow); border-color: var(--px-yellow); }
+
+  /* ── SECTION BASE ── */
+  section { padding: 4rem 3rem; }
+  .section-header {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .section-num {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    color: var(--px-yellow);
+    background: var(--dark);
+    padding: 6px 10px;
+    border: 2px solid var(--px-yellow);
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: var(--font-pixel);
+    font-size: clamp(9px, 1.4vw, 13px);
+    color: var(--dark);
+    letter-spacing: 1px;
+  }
+  .section-line {
+    flex: 1;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--dark) 0, var(--dark) 8px, transparent 8px, transparent 16px);
+    opacity: 0.2;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #444;
+  }
+  .about-text strong { font-weight: 500; color: var(--dark); }
+  .edu-card {
+    background: #fff;
+    border: 2px solid var(--dark);
+    padding: 1.75rem;
+    position: relative;
+  }
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    bottom: -7px; right: -7px;
+    width: 100%; height: 100%;
+    background: var(--px-yellow);
+    z-index: -1;
+  }
+  .edu-label {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: var(--px-yellow);
+    background: var(--dark);
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+  }
+  .edu-school {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+  }
+  .edu-degree {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  .edu-detail {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 0.25rem;
+  }
+  .edu-honor {
+    display: inline-block;
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: var(--dark);
+    background: var(--px-yellow);
+    padding: 4px 10px;
+    margin-top: 0.75rem;
+  }
+
+  /* ── EXPERTISE CARDS ── */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .exp-card {
+    background: #fff;
+    border: 2px solid var(--dark);
+    padding: 1.75rem;
+    position: relative;
+    transition: transform 0.15s;
+  }
+  .exp-card::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; right: -6px;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+  .exp-card:hover { transform: translate(-3px, -3px); }
+  .exp-card:hover::after { bottom: -9px; right: -9px; }
+  .exp-card.card-ux  { border-color: var(--px-pink); }
+  .exp-card.card-ux::after  { background: var(--px-pink); }
+  .exp-card.card-tech { border-color: var(--px-cyan); }
+  .exp-card.card-tech::after { background: var(--px-cyan); }
+  .exp-card.card-pm  { border-color: var(--px-yellow); }
+  .exp-card.card-pm::after  { background: var(--px-yellow); }
+  .exp-card.card-data { border-color: var(--px-green); }
+  .exp-card.card-data::after { background: var(--px-green); }
+
+  .exp-card-icon {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .exp-card-title {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    margin-bottom: 0.75rem;
+    line-height: 1.9;
+  }
+  .exp-card-body {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .exp-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 4px 8px;
+    background: var(--dark);
+    color: #fff;
+    display: inline-block;
+  }
+
+  /* ── SKILLS TICKER ── */
+  .skills-strip {
+    background: var(--dark);
+    padding: 1.25rem 0;
+    overflow: hidden;
+    border-top: 3px solid var(--px-yellow);
+    border-bottom: 3px solid var(--px-yellow);
+  }
+  .skills-ticker {
+    display: flex; gap: 3rem;
+    animation: ticker 25s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .skill-item {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+  .skill-item span { color: var(--px-yellow); margin-right: 0.75rem; }
+
+  /* ── EXPERIENCE ── */
+  .work-section { background: var(--dark); }
+  .work-section .section-title { color: #fff; }
+  .work-section .section-line {
+    background: none;
+    background: repeating-linear-gradient(90deg, #fff 0, #fff 8px, transparent 8px, transparent 16px);
+    opacity: 0.2;
+  }
+
+  .exp-timeline { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    align-items: start;
+  }
+  @media (max-width: 600px) {
+    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+  }
+  .exp-meta {}
+  .exp-company {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    color: var(--px-yellow);
+    line-height: 1.9;
+    margin-bottom: 0.5rem;
+  }
+  .exp-date {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+  }
+  .exp-role {
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .exp-bullets { list-style: none; padding: 0; }
+  .exp-bullets li {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    padding: 0.3rem 0 0.3rem 1.25rem;
+    position: relative;
+  }
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--px-cyan);
+    font-size: 10px;
+    top: 6px;
+  }
+  .exp-pill {
+    display: inline-block;
+    font-family: var(--font-pixel);
+    font-size: 6px;
+    padding: 5px 9px;
+    border: 1px solid;
+    margin-top: 0.75rem;
+    margin-right: 6px;
+  }
+  .pill-data   { color: var(--px-green);  border-color: var(--px-green); }
+  .pill-pm     { color: var(--px-yellow); border-color: var(--px-yellow); }
+  .pill-ops    { color: var(--px-cyan);   border-color: var(--px-cyan); }
+  .pill-lead   { color: var(--px-pink);   border-color: var(--px-pink); }
+
+  /* ── DATA SECTION ── */
+  .data-section { background: #EDE8DC; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .stat-card {
+    background: #fff;
+    border: 2px solid var(--dark);
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.15s;
+  }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; right: -5px;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+  .stat-card:hover { transform: translate(-2px, -2px); }
+  .stat-card.s-green::after { background: var(--px-green); }
+  .stat-card.s-pink::after  { background: var(--px-pink); }
+  .stat-card.s-cyan::after  { background: var(--px-cyan); }
+
+  .stat-label {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+  .stat-num {
+    font-family: var(--font-pixel);
+    font-size: 26px;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: #777;
+  }
+
+  .chart-wrap {
+    background: #fff;
+    border: 2px solid var(--dark);
+    padding: 2rem;
+    position: relative;
+  }
+  .chart-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -7px; right: -7px;
+    width: 100%; height: 100%;
+    background: var(--px-green);
+    z-index: -1;
+  }
+  .chart-label {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: #bbb;
+    margin-bottom: 1.5rem;
+  }
+  .bar-chart { display: flex; align-items: flex-end; gap: 16px; height: 140px; }
+  .bar-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+  .bar {
+    width: 100%;
+    border: 2px solid var(--dark);
+    transition: filter 0.2s;
+    cursor: default;
+    position: relative;
+  }
+  .bar:hover { filter: brightness(1.15); }
+  .bar-val { font-family: var(--font-pixel); font-size: 7px; color: var(--dark); }
+  .bar-lbl { font-family: var(--font-mono); font-size: 10px; color: #888; text-align: center; }
+
+  /* ── TOOLS ── */
+  .tools-section {}
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .tool-pill {
+    background: var(--dark);
+    color: #fff;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    border: 2px solid var(--dark);
+    transition: transform 0.1s, background 0.1s, color 0.1s;
+    cursor: default;
+  }
+  .tool-pill:hover {
+    background: #fff;
+    color: var(--dark);
+    transform: translate(-2px, -2px);
+  }
+  .tool-dot {
+    width: 8px; height: 8px;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--dark);
+    text-align: center;
+    padding: 5rem 3rem;
+  }
+  .contact-section .section-title { color: #fff; }
+  .contact-section .section-line {
+    background: none;
+    background: repeating-linear-gradient(90deg, #fff 0, #fff 8px, transparent 8px, transparent 16px);
+    opacity: 0.2;
+  }
+
+  .contact-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .contact-link {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    padding: 14px 24px;
+    border: 2px solid;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform 0.1s, box-shadow 0.1s;
+    display: inline-block;
+  }
+  .contact-link.primary {
+    background: var(--px-yellow);
+    color: var(--dark);
+    border-color: var(--px-yellow);
+    box-shadow: 5px 5px 0 rgba(255,230,0,0.3);
+  }
+  .contact-link.primary:hover {
+    transform: translate(-3px,-3px);
+    box-shadow: 8px 8px 0 rgba(255,230,0,0.3);
+  }
+  .contact-link.secondary {
+    color: rgba(255,255,255,0.7);
+    border-color: rgba(255,255,255,0.3);
+  }
+  .contact-link.secondary:hover {
+    color: var(--px-cyan);
+    border-color: var(--px-cyan);
+    transform: translate(-2px,-2px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-logo {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    color: var(--px-yellow);
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AC.EXE</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#data">Data</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">CIS STUDENT · GSU · CLASS OF 2026</div>
+  <h1 class="hero-name">
+    <span class="pink">ASHLEE</span> <span class="yellow">CRANMER</span>
+  </h1>
+  <div class="hero-title">ASPIRING DATA ANALYST · TECH THINKER · UX CURIOUS</div>
+  <p class="hero-sub">
+    Computer Information Systems student at Georgia State University,<br>
+    learning to connect data, design, and technology to solve real problems.
+  </p>
+  <div class="hero-badges">
+    <div class="badge b-green">DATA ANALYSIS</div>
+    <div class="badge b-cyan">TECH CONSULTING</div>
+    <div class="badge b-pink">UX DESIGN</div>
+    <div class="badge b-yellow">PROJECT MGMT</div>
+  </div>
+
+  <!-- Pixel art deco canvas -->
+  <div class="hero-deco">
+    <canvas id="heroCanvas" width="120" height="120" style="image-rendering:pixelated;opacity:0.85;"></canvas>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">ABOUT ME</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a <strong>Computer Information Systems student</strong> at Georgia State University with a focus on Digital Innovation — currently building skills at the crossroads of data, design, and technology.</p>
+      <br>
+      <p>I'm drawn to questions like: <em>what does this data actually mean?</em> and <em>why is this system so hard to use?</em> I find myself naturally thinking in terms of <strong>patterns, processes, and people</strong> — and I love when those three things come together to make something work better.</p>
+      <br>
+      <p>Still early in my journey, but already getting hands-on — from building dashboards and optimizing workflows at my internship to exploring UX principles and tech consulting concepts through coursework and curiosity.</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-label">EDUCATION</div>
+      <div class="edu-school">GEORGIA STATE<br>UNIVERSITY</div>
+      <div class="edu-degree">BBA in Computer Information Systems<br><span style="font-weight:300;color:#777;">Digital Innovation Track</span></div>
+      <div class="edu-detail" style="margin-top:0.75rem;">GPA: 3.28 · Atlanta, GA</div>
+      <div class="edu-detail">Tableau · Excel · Python · Agile</div>
+      <div class="edu-honor">★ PRESIDENT'S LIST · SUMMER 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" style="background:#EDE8DC;">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">WHAT I'M INTO</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="expertise-grid">
+
+    <div class="exp-card card-data">
+      <span class="exp-card-icon">📊</span>
+      <div class="exp-card-title">DATA ANALYSIS</div>
+      <div class="exp-card-body">My strongest area of hands-on experience. I love cleaning messy datasets, building visualizations, and finding the story hiding in the numbers. Learning more every day.</div>
+      <div class="exp-tag">EXCEL · POWER BI · PYTHON</div>
+    </div>
+
+    <div class="exp-card card-tech">
+      <span class="exp-card-icon">⚙️</span>
+      <div class="exp-card-title">TECH CONSULTING</div>
+      <div class="exp-card-body">Fascinated by how organizations adopt — and struggle with — technology. I'm interested in helping people cut through complexity and make smarter tech decisions.</div>
+      <div class="exp-tag">IT SOLUTIONS · STRATEGY</div>
+    </div>
+
+    <div class="exp-card card-pm">
+      <span class="exp-card-icon">🗂️</span>
+      <div class="exp-card-title">DATA-BASED THINKING</div>
+      <div class="exp-card-body">I approach problems with a data-first mindset — asking what we actually know, what we're assuming, and what a better process would look like if we followed the evidence.</div>
+      <div class="exp-tag">AGILE · RISK · PROCESS</div>
+    </div>
+
+    <div class="exp-card card-ux">
+      <span class="exp-card-icon">🖥️</span>
+      <div class="exp-card-title">UX DESIGN</div>
+      <div class="exp-card-body">Exploring how design shapes the way people interact with systems. I'm curious about the gap between how things work and how they feel — and how good design closes it.</div>
+      <div class="exp-tag">BPM · WORKFLOWS · DESIGN</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS TICKER -->
+<div class="skills-strip">
+  <div class="skills-ticker" id="ticker"></div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="work-section">
+  <div class="section-header">
+    <div class="section-num" style="color:var(--dark);background:var(--px-yellow);border-color:var(--px-yellow);">03</div>
+    <div class="section-title">EXPERIENCE &amp; COURSEWORK</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">BUSINESS OPS<br>INTERNSHIP</div>
+        <div class="exp-date">Recent</div>
+      </div>
+      <div>
+        <div class="exp-role">Business Operations Optimization Intern <span style="font-weight:300;font-size:14px;color:rgba(255,255,255,0.4);">· Data & Analytics Focus</span></div>
+        <ul class="exp-bullets">
+          <li>Built executive-level attendance performance reports in Excel and Power BI — my first real taste of how data shapes leadership decisions.</li>
+          <li>Optimized attendance workflows, increasing weekly case processing capacity by <strong style="color:var(--px-yellow);">333%</strong> — from 30 to 130 cases per week.</li>
+          <li>Documented and restructured operational workflows to improve tracking and reporting consistency.</li>
+          <li>Designed Excel data entry tools for the attendance team to streamline progress tracking.</li>
+          <li>Presented findings to company leadership — good practice in translating data into a clear, actionable story.</li>
+        </ul>
+        <div>
+          <span class="exp-pill pill-data">DATA ANALYSIS</span>
+          <span class="exp-pill pill-ops">POWER BI</span>
+          <span class="exp-pill pill-pm">PROCESS OPT.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">SUMMIT COFFEE</div>
+        <div class="exp-date">06/2025 – Present</div>
+      </div>
+      <div>
+        <div class="exp-role">Barista · Assistant Manager</div>
+        <ul class="exp-bullets">
+          <li>Leadership, customer service, and inventory management in a fast-paced environment.</li>
+          <li>Developing customer relations and team coordination skills.</li>
+        </ul>
+        <div>
+          <span class="exp-pill pill-lead">LEADERSHIP</span>
+          <span class="exp-pill pill-ops">OPERATIONS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">CHICK-FIL-A</div>
+        <div class="exp-date">06/2019 – 02/2025</div>
+      </div>
+      <div>
+        <div class="exp-role">Shift Lead · Drive-Thru &amp; Efficiency Coordinator · Certified Trainer</div>
+        <ul class="exp-bullets">
+          <li>Progressed through Team Member → Certified Trainer → Shift Lead → Efficiency Coordinator over 6 years.</li>
+          <li>Led project management efforts including strategy development and operational procedure improvements.</li>
+          <li>Conducted productivity assessments and reported on performance to drive efficiency improvements.</li>
+          <li>Trained new team members and ensured regulatory compliance across shifts.</li>
+        </ul>
+        <div>
+          <span class="exp-pill pill-pm">PROJECT MGMT</span>
+          <span class="exp-pill pill-lead">TRAINING</span>
+          <span class="exp-pill pill-ops">EFFICIENCY</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">GSU<br>COURSEWORK</div>
+        <div class="exp-date">Ongoing</div>
+      </div>
+      <div>
+        <div class="exp-role">Relevant Courses</div>
+        <ul class="exp-bullets">
+          <li><strong style="color:rgba(255,255,255,0.85);">Managing with AI</strong> — information systems management, agile vs. plan-driven methods, AI-driven project automation, and risk assessment.</li>
+          <li><strong style="color:rgba(255,255,255,0.85);">Intro to CIS</strong> — data analysis in Excel: pivot charts, pivot tables, VLOOKUP, XLOOKUP, and data visualization methods.</li>
+          <li><strong style="color:rgba(255,255,255,0.85);">Intro to Programming</strong> — problem analysis, program design, debugging, and code optimization in Python.</li>
+        </ul>
+        <div>
+          <span class="exp-pill pill-data">DATA</span>
+          <span class="exp-pill pill-ops">PYTHON</span>
+          <span class="exp-pill pill-pm">AI &amp; AGILE</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="data" class="data-section">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title">DATA AT A GLANCE</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card s-green">
+      <div class="stat-label">WORKFLOW IMPROVEMENT</div>
+      <div class="stat-num">333%</div>
+      <div class="stat-desc">Increase in weekly case processing capacity</div>
+    </div>
+    <div class="stat-card s-pink">
+      <div class="stat-label">GPA</div>
+      <div class="stat-num">3.28</div>
+      <div class="stat-desc">Georgia State University · President's List</div>
+    </div>
+    <div class="stat-card s-cyan">
+      <div class="stat-label">YEARS OF WORK EXPERIENCE</div>
+      <div class="stat-num">6+</div>
+      <div class="stat-desc">Operations, leadership & data-driven roles</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-label">SKILLS PROFICIENCY · SELF-ASSESSED</div>
+    <div class="bar-chart" id="barChart"></div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title">TOOLS &amp; TECH</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="tools-grid" id="toolsGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-header" style="justify-content:center;">
+    <div class="section-num" style="color:var(--dark);background:var(--px-yellow);border-color:var(--px-yellow);">06</div>
+    <div class="section-title" style="color:#fff;">LET'S CONNECT</div>
+  </div>
+  <p class="contact-sub">
+    Looking for internships, entry-level opportunities, and people doing<br>interesting work at the intersection of data, design, and technology.
+  </p>
+  <div class="contact-links">
+    <a class="contact-link primary" href="mailto:aacranmer@gmail.com">EMAIL ME</a>
+    <a class="contact-link secondary" href="https://www.linkedin.com/in/ashlee-cranmer/" target="_blank">LINKEDIN</a>
+    <a class="contact-link secondary" href="tel:4042737314">CALL / TEXT</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 Ashlee Cranmer · GSU CIS Student · Always learning</div>
+  <div class="footer-logo">AC.EXE</div>
+</footer>
+
+<script>
+/* ── pixel hero art ── */
+(function() {
+  const c = document.getElementById('heroCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const s = 10;
+  const P = { Y:'#FFE600', C:'#00F5FF', G:'#39FF14', W:'#ffffff', D:'#1A1A2E', K:'#B44FFF', O:'#FF6B9D' };
+  // abstract pixel deco: three geometric shapes
+  const shapes = [
+    // diamond
+    [[0,0,0,'Y',0,0,0,0,0,0,0,0],[0,0,'Y','Y','Y',0,0,0,0,0,0,0],['Y','Y','Y','Y','Y','Y',0,0,0,0,0,0],[0,0,'Y','Y','Y',0,0,0,0,0,0,0],[0,0,0,'Y',0,0,0,0,0,0,0,0]],
+    // plus
+    [[0,0,0,'C',0,0,0,0],[0,0,0,'C',0,0,0,0],['C','C','C','C','C','C','C','C'],[0,0,0,'C',0,0,0,0],[0,0,0,'C',0,0,0,0]],
+    // small square
+    [['G','G','G'],['G',0,'G'],['G','G','G']],
+  ];
+  const offsets = [[0,0],[4,6],[7,1]];
+  shapes.forEach((sh, i) => {
+    const [ox, oy] = offsets[i];
+    sh.forEach((row, y) => {
+      row.forEach((col, x) => {
+        if (col && P[col]) {
+          ctx.fillStyle = P[col];
+          ctx.fillRect((ox + x) * s, (oy + y) * s, s, s);
+        }
+      });
+    });
+  });
+})();
+
+/* ── skills ticker ── */
+(function() {
+  const skills = [
+    'EXCEL','POWER BI','PYTHON','TABLEAU','DATA CLEANING',
+    'PIVOT TABLES','VLOOKUP / XLOOKUP','BUSINESS PROCESS MODELING',
+    'AGILE','RISK ASSESSMENT','PROCESS OPTIMIZATION',
+    'IT SOLUTION DESIGN','MICROSOFT OFFICE','DATA VISUALIZATION',
+    'WORKFORCE ANALYTICS','DIGITAL TRANSFORMATION'
+  ];
+  const ticker = document.getElementById('ticker');
+  if (!ticker) return;
+  const doubled = [...skills, ...skills];
+  doubled.forEach(s => {
+    const el = document.createElement('div');
+    el.className = 'skill-item';
+    el.innerHTML = `<span>▸</span>${s}`;
+    ticker.appendChild(el);
+  });
+})();
+
+/* ── bar chart ── */
+(function() {
+  const bars = [
+    { label: 'Excel',    val: 90, color: '#39FF14' },
+    { label: 'Power BI', val: 80, color: '#00F5FF' },
+    { label: 'Python',   val: 65, color: '#B44FFF' },
+    { label: 'Tableau',  val: 70, color: '#FFE600' },
+    { label: 'Agile',    val: 75, color: '#FF6B9D' },
+  ];
+  const container = document.getElementById('barChart');
+  if (!container) return;
+  const maxH = 110;
+  bars.forEach(b => {
+    const wrap = document.createElement('div');
+    wrap.className = 'bar-wrap';
+    const val = document.createElement('div');
+    val.className = 'bar-val';
+    val.textContent = b.val + '%';
+    const barEl = document.createElement('div');
+    barEl.className = 'bar';
+    barEl.style.height = Math.round((b.val / 100) * maxH) + 'px';
+    barEl.style.background = b.color;
+    const lbl = document.createElement('div');
+    lbl.className = 'bar-lbl';
+    lbl.textContent = b.label;
+    wrap.appendChild(val);
+    wrap.appendChild(barEl);
+    wrap.appendChild(lbl);
+    container.appendChild(wrap);
+  });
+})();
+
+/* ── tools grid ── */
+(function() {
+  const tools = [
+    { name: 'Microsoft Excel',  color: '#39FF14' },
+    { name: 'Power BI',         color: '#00F5FF' },
+    { name: 'Python',           color: '#B44FFF' },
+    { name: 'Tableau',          color: '#FFE600' },
+    { name: 'Microsoft Office', color: '#FF6B9D' },
+    { name: 'Pivot Tables',     color: '#FF8C42' },
+    { name: 'VLOOKUP / XLOOKUP',color: '#39FF14' },
+    { name: 'Agile / Scrum',    color: '#FFE600' },
+    { name: 'Process Modeling', color: '#00F5FF' },
+    { name: 'Data Cleaning',    color: '#B44FFF' },
+    { name: 'IT Solution Design',color: '#FF6B9D' },
+    { name: 'Risk Assessment',  color: '#FF8C42' },
+  ];
+  const grid = document.getElementById('toolsGrid');
+  if (!grid) return;
+  tools.forEach(t => {
+    const pill = document.createElement('div');
+    pill.className = 'tool-pill';
+    pill.innerHTML = `<div class="tool-dot" style="background:${t.color};"></div>${t.name}`;
+    grid.appendChild(pill);
+  });
+})();
+</script>
+</body>
+</html>
