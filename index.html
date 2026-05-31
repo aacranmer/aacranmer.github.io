@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +13,12 @@
   :root {
     --cream: #F5F0E8;
     --dark: #1A1A2E;
-    --px-pink: #FF6B9D;
-    --px-cyan: #00F5FF;
-    --px-yellow: #FFE600;
-    --px-green: #39FF14;
-    --px-purple: #B44FFF;
-    --px-orange: #FF8C42;
+    --px-pink: #F0A0BC;
+    --px-cyan: #7DDEE8;
+    --px-yellow: #F0D080;
+    --px-green: #88D87A;
+    --px-purple: #C0A0E8;
+    --px-orange: #F0B088;
     --font-pixel: 'Press Start 2P', monospace;
     --font-body: 'DM Sans', sans-serif;
     --font-mono: 'Space Mono', monospace;
@@ -57,6 +58,7 @@
     transition: opacity 0.15s, color 0.15s;
   }
   .nav-links a:hover { opacity: 1; color: var(--px-cyan); }
+
 
   /* ── HERO ── */
   .hero {
@@ -140,6 +142,7 @@
   .b-cyan   { color: var(--px-cyan);   border-color: var(--px-cyan); }
   .b-green  { color: var(--px-green);  border-color: var(--px-green); }
   .b-yellow { color: var(--px-yellow); border-color: var(--px-yellow); }
+  .b-purple { color: var(--px-purple); border-color: var(--px-purple); }
 
   /* ── SECTION BASE ── */
   section { padding: 4rem 3rem; }
@@ -169,6 +172,7 @@
     opacity: 0.2;
   }
 
+
   /* ── ABOUT ── */
   .about-grid {
     display: grid;
@@ -189,6 +193,8 @@
     border: 2px solid var(--dark);
     padding: 1.75rem;
     position: relative;
+    margin-top: 1.5rem;
+    max-width: 420px;
   }
   .edu-card::after {
     content: '';
@@ -257,14 +263,16 @@
   }
   .exp-card:hover { transform: translate(-3px, -3px); }
   .exp-card:hover::after { bottom: -9px; right: -9px; }
-  .exp-card.card-ux  { border-color: var(--px-pink); }
-  .exp-card.card-ux::after  { background: var(--px-pink); }
-  .exp-card.card-tech { border-color: var(--px-cyan); }
-  .exp-card.card-tech::after { background: var(--px-cyan); }
-  .exp-card.card-pm  { border-color: var(--px-yellow); }
-  .exp-card.card-pm::after  { background: var(--px-yellow); }
-  .exp-card.card-data { border-color: var(--px-green); }
-  .exp-card.card-data::after { background: var(--px-green); }
+  .exp-card.card-ux  { border-color: #F0A0BC; }
+  .exp-card.card-ux::after  { background: #F0A0BC; }
+  .exp-card.card-tech { border-color: #7DDEE8; }
+  .exp-card.card-tech::after { background: #7DDEE8; }
+  .exp-card.card-pm  { border-color: #F0D080; }
+  .exp-card.card-pm::after  { background: #F0D080; }
+  .exp-card.card-purple { border-color: #C0A0E8; }
+  .exp-card.card-purple::after { background: #C0A0E8; }
+  .exp-card.card-data { border-color: #88D87A; }
+  .exp-card.card-data::after { background: #88D87A; }
 
   .exp-card-icon {
     font-size: 24px;
@@ -355,7 +363,7 @@
   .exp-role {
     font-size: 17px;
     font-weight: 500;
-    color: #fff;
+    color: var(--px-green);
     margin-bottom: 0.75rem;
   }
   .exp-bullets { list-style: none; padding: 0; }
@@ -555,6 +563,85 @@
     transform: translate(-2px,-2px);
   }
 
+  /* ── PROJECTS ── */
+  .projects-section { background: var(--cream); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: #fff;
+    border: 2px solid var(--dark);
+    padding: 1.75rem;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.15s;
+    cursor: pointer;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; right: -6px;
+    width: 100%; height: 100%;
+    z-index: -1;
+    transition: bottom 0.15s, right 0.15s;
+  }
+  .project-card:hover { transform: translate(-4px, -4px); }
+  .project-card:hover::after { bottom: -10px; right: -10px; }
+  .project-card.pc-cyan::after  { background: #7DDEE8; }
+  .project-card.pc-pink::after  { background: #F0A0BC; }
+  .project-card.pc-green::after { background: #C0A0E8; }
+  .project-card.pc-yellow::after{ background: #F0D080; }
+
+  .pc-type {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    border: 1px solid;
+  }
+  .pc-type.t-cyan   { color: #7DDEE8;  border-color: #7DDEE8; }
+  .pc-type.t-pink   { color: #F0A0BC;  border-color: #F0A0BC; }
+  .pc-type.t-green  { color: #C0A0E8;  border-color: #C0A0E8; }
+  .pc-type.t-yellow { color: #F0D080;  border-color: #F0D080; }
+
+  .pc-title {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    line-height: 1.9;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+  }
+  .pc-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .pc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .pc-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    background: var(--dark);
+    color: rgba(255,255,255,0.7);
+  }
+  .pc-cta {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: var(--dark);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pc-cta::after { content: '→'; }
+
   /* ── FOOTER ── */
   footer {
     background: var(--dark);
@@ -575,6 +662,183 @@
     color: var(--px-yellow);
     opacity: 0.6;
   }
+
+  /* ════════════════════════════════════════
+     PREMIUM POLISH LAYER
+  ════════════════════════════════════════ */
+
+  /* ── NAV: glow logo + active link indicator ── */
+  .nav-logo {
+    text-shadow: 0 0 12px rgba(255,230,0,0.6), 0 0 24px rgba(255,230,0,0.25);
+    animation: logoFlicker 8s ease-in-out infinite;
+  }
+  @keyframes logoFlicker {
+    0%,96%,100% { opacity:1; text-shadow:0 0 12px rgba(255,230,0,0.6),0 0 24px rgba(255,230,0,0.25); }
+    97%          { opacity:0.6; text-shadow:none; }
+    98%          { opacity:1; text-shadow:0 0 18px rgba(255,230,0,0.9); }
+    99%          { opacity:0.7; }
+  }
+  .nav-links a { position:relative; }
+  .nav-links a::after {
+    content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px;
+    background:var(--px-cyan); transition:width 0.2s ease;
+  }
+  .nav-links a:hover::after { width:100%; }
+
+  /* ── HERO: scanlines + deep atmosphere ── */
+  .hero::after {
+    content:'';
+    position:absolute; inset:0; pointer-events:none; z-index:1;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.08) 3px,
+      rgba(0,0,0,0.08) 4px
+    );
+  }
+  .hero > * { position:relative; z-index:2; }
+
+  /* Animated gradient vignette */
+  .hero-vignette {
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background: radial-gradient(ellipse 80% 70% at 30% 50%, transparent 40%, rgba(0,0,0,0.55) 100%);
+  }
+
+  /* ── Hero tag: blinking cursor ── */
+  .hero-tag::after {
+    content:'█';
+    color:var(--px-green);
+    animation: cursorBlink 1.1s step-end infinite;
+    margin-left:4px;
+    font-size:10px;
+  }
+  @keyframes cursorBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* ── Hero badges: glow on hover ── */
+  .badge { transition: transform 0.15s, box-shadow 0.15s; }
+  .b-pink:hover   { box-shadow: 0 0 14px rgba(255,107,157,0.5); }
+  .b-cyan:hover   { box-shadow: 0 0 14px rgba(0,245,255,0.5); }
+  .b-green:hover  { box-shadow: 0 0 14px rgba(57,255,20,0.5); }
+  .b-yellow:hover { box-shadow: 0 0 14px rgba(255,230,0,0.5); }
+
+  /* ── Section numbers: accent glow ── */
+  .section-num {
+    transition: box-shadow 0.2s;
+  }
+  section:hover .section-num {
+    box-shadow: 3px 3px 0 var(--px-yellow), 0 0 12px rgba(255,230,0,0.25);
+  }
+
+  /* ── Expertise cards: richer shadow on hover ── */
+  .exp-card {
+    transition: transform 0.18s cubic-bezier(.2,.8,.2,1), box-shadow 0.18s;
+  }
+  .exp-card.card-data:hover { box-shadow: 0 0 20px rgba(136,216,122,0.25); }
+  .exp-card.card-tech:hover { box-shadow: 0 0 20px rgba(125,222,232,0.25); }
+  .exp-card.card-pm:hover   { box-shadow: 0 0 20px rgba(192,160,232,0.25); }
+  .exp-card.card-ux:hover   { box-shadow: 0 0 20px rgba(240,160,188,0.25); }
+
+  /* ── Project cards: lift + glow on hover ── */
+  .project-card {
+    transition: transform 0.18s cubic-bezier(.2,.8,.2,1), box-shadow 0.18s;
+  }
+  .project-card.pc-cyan:hover  { box-shadow: 0 8px 32px rgba(125,222,232,0.2); }
+  .project-card.pc-green:hover { box-shadow: 0 8px 32px rgba(192,160,232,0.2); }
+  .project-card.pc-yellow:hover{ box-shadow: 0 8px 32px rgba(240,208,128,0.2); }
+  .project-card.pc-pink:hover  { box-shadow: 0 8px 32px rgba(240,160,188,0.2); }
+
+  /* "VIEW CASE STUDY" arrow slide */
+  .pc-cta { transition: gap 0.15s; }
+  .project-card:hover .pc-cta { gap: 10px; color: var(--px-cyan); }
+
+  /* ── Stat cards: color-matched glow ── */
+  .stat-card.s-green:hover { box-shadow: 0 0 18px rgba(57,255,20,0.2); }
+  .stat-card.s-pink:hover  { box-shadow: 0 0 18px rgba(255,107,157,0.2); }
+  .stat-card.s-cyan:hover  { box-shadow: 0 0 18px rgba(0,245,255,0.2); }
+
+  /* ── Skills ticker: neon glow on items ── */
+  .skill-item span { text-shadow: 0 0 8px rgba(255,230,0,0.6); }
+
+  /* ── Experience bullets: cyan glow on hover ── */
+  .exp-item:hover .exp-company {
+    text-shadow: 0 0 10px rgba(255,230,0,0.4);
+  }
+
+  /* ── Tool pills: refined hover ── */
+  .tool-pill {
+    transition: transform 0.15s, background 0.15s, color 0.15s, box-shadow 0.15s;
+  }
+  .tool-pill:hover {
+    box-shadow: 3px 3px 0 rgba(255,255,255,0.15);
+  }
+
+  /* ── Contact buttons: premium glow ── */
+  .contact-link.primary:hover {
+    box-shadow: 8px 8px 0 rgba(255,230,0,0.3), 0 0 24px rgba(255,230,0,0.2);
+  }
+  .contact-link.secondary:hover {
+    box-shadow: 0 0 14px rgba(0,245,255,0.25);
+  }
+
+  /* ── Fade-up entrance animation ── */
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(22px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .hero-tag   { animation: fadeUp 0.5s ease both; animation-delay:0.05s; }
+  .hero-name  { animation: fadeUp 0.5s ease both; animation-delay:0.15s; }
+  .hero-title { animation: fadeUp 0.5s ease both; animation-delay:0.25s; }
+  .hero-sub   { animation: fadeUp 0.5s ease both; animation-delay:0.35s; }
+  .hero-badges{ animation: fadeUp 0.5s ease both; animation-delay:0.45s; }
+
+  /* ── Edu card: matching glow ── */
+  .edu-card:hover {
+    box-shadow: 0 0 20px rgba(255,230,0,0.15);
+    transform: translate(-2px,-2px);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  /* ── Skills strip border glow ── */
+  .skills-strip {
+    box-shadow: 0 0 20px rgba(255,230,0,0.1);
+  }
+
+  /* ── Section dividers: subtle gradient underline on headers ── */
+  .section-title {
+    background: linear-gradient(90deg, var(--dark) 0%, #444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .work-section .section-title {
+    background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* ── About section: subtle warm background texture ── */
+  #about {
+    background: linear-gradient(160deg, var(--cream) 0%, #EDE8DC 100%);
+  }
+
+  /* ── Contact section: deep atmosphere ── */
+  .contact-section {
+    background: linear-gradient(180deg, var(--dark) 0%, #0d0d1f 100%);
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-section::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(0,245,255,0.06) 0%, transparent 70%);
+    pointer-events:none;
+  }
+
+  /* ── Footer: pixel border ── */
+  footer {
+    border-top: 3px solid transparent;
+    border-image: repeating-linear-gradient(90deg, var(--px-yellow) 0, var(--px-yellow) 6px, transparent 6px, transparent 12px) 1;
+  }
 </style>
 </head>
 <body>
@@ -584,35 +848,34 @@
   <div class="nav-logo">AC.EXE</div>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#expertise">Expertise</a>
+    <a href="#expertise">What I'm Into</a>
     <a href="#experience">Experience</a>
-    <a href="#data">Data</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-vignette"></div>
   <div class="hero-tag">CIS STUDENT · GSU · CLASS OF 2026</div>
   <h1 class="hero-name">
     <span class="pink">ASHLEE</span> <span class="yellow">CRANMER</span>
   </h1>
-  <div class="hero-title">ASPIRING DATA ANALYST · TECH THINKER · UX CURIOUS</div>
+  <div class="hero-title">DATA · OPERATIONS · LEADERSHIP · TECHNOLOGY</div>
   <p class="hero-sub">
-    Computer Information Systems student at Georgia State University,<br>
-    learning to connect data, design, and technology to solve real problems.
+    Computer Information Systems (Digital Innovation) student at Georgia State University,<br>
+    learning to connect data, operations, design, and technology to solve real problems.
   </p>
   <div class="hero-badges">
     <div class="badge b-green">DATA ANALYSIS</div>
     <div class="badge b-cyan">TECH CONSULTING</div>
     <div class="badge b-pink">UX DESIGN</div>
-    <div class="badge b-yellow">PROJECT MGMT</div>
+    <div class="badge b-purple">PROJECT MGMT</div>
+    <div class="badge b-yellow">OPERATIONS</div>
   </div>
 
-  <!-- Pixel art deco canvas -->
-  <div class="hero-deco">
-    <canvas id="heroCanvas" width="120" height="120" style="image-rendering:pixelated;opacity:0.85;"></canvas>
-  </div>
+
 </div>
 
 <!-- ABOUT -->
@@ -624,11 +887,11 @@
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a <strong>Computer Information Systems student</strong> at Georgia State University with a focus on Digital Innovation — currently building skills at the crossroads of data, design, and technology.</p>
+      <p>I'm a <strong>Computer Information Systems student</strong> at Georgia State University with a focus on Digital Innovation — driven by a simple idea: that the right data, in the right hands, can fix almost anything.</p>
       <br>
-      <p>I'm drawn to questions like: <em>what does this data actually mean?</em> and <em>why is this system so hard to use?</em> I find myself naturally thinking in terms of <strong>patterns, processes, and people</strong> — and I love when those three things come together to make something work better.</p>
+      <p>Operations, leadership, and technology are where I live. I've spent <strong>6+ years leading teams</strong>, solving process problems, and figuring out how to make things run better — and now I'm bringing that same instinct into <strong>data analysis, tech consulting, UX design, and project management</strong>. I'm drawn to questions like: <em>what does this data actually mean?</em> and <em>how can this system be improved?</em></p>
       <br>
-      <p>Still early in my journey, but already getting hands-on — from building dashboards and optimizing workflows at my internship to exploring UX principles and tech consulting concepts through coursework and curiosity.</p>
+      <p>I think naturally in terms of <strong>patterns, processes, and people</strong> — and I'm most comfortable when I'm leading others toward a solution. I'm curious by nature, energized by complexity, and genuinely excited to take everything I've built so far into the workforce.</p>
     </div>
     <div class="edu-card">
       <div class="edu-label">EDUCATION</div>
@@ -654,28 +917,35 @@
       <span class="exp-card-icon">📊</span>
       <div class="exp-card-title">DATA ANALYSIS</div>
       <div class="exp-card-body">My strongest area of hands-on experience. I love cleaning messy datasets, building visualizations, and finding the story hiding in the numbers. Learning more every day.</div>
-      <div class="exp-tag">EXCEL · POWER BI · PYTHON</div>
+      <div class="exp-tag">EXCEL · POWER BI · PYTHON · SQL</div>
     </div>
 
     <div class="exp-card card-tech">
       <span class="exp-card-icon">⚙️</span>
       <div class="exp-card-title">TECH CONSULTING</div>
       <div class="exp-card-body">Fascinated by how organizations adopt — and struggle with — technology. I'm interested in helping people cut through complexity and make smarter tech decisions.</div>
-      <div class="exp-tag">IT SOLUTIONS · STRATEGY</div>
+      <div class="exp-tag">IT SOLUTIONS · SYSTEMS · STRATEGY</div>
     </div>
 
     <div class="exp-card card-pm">
-      <span class="exp-card-icon">🗂️</span>
-      <div class="exp-card-title">DATA-BASED THINKING</div>
-      <div class="exp-card-body">I approach problems with a data-first mindset — asking what we actually know, what we're assuming, and what a better process would look like if we followed the evidence.</div>
-      <div class="exp-tag">AGILE · RISK · PROCESS</div>
+      <span class="exp-card-icon">📈</span>
+      <div class="exp-card-title">DATA-BASED OPERATIONAL THINKING</div>
+      <div class="exp-card-body">I approach operational problems with a data-first mindset — asking what the numbers actually tell us, where processes break down, and how evidence-backed decisions lead to better outcomes. I'm drawn to the intersection of data and real-world operations.</div>
+      <div class="exp-tag">PROCESS IMPROVEMENT · WORKFLOW DESIGN · ANALYTICS</div>
     </div>
 
     <div class="exp-card card-ux">
       <span class="exp-card-icon">🖥️</span>
       <div class="exp-card-title">UX DESIGN</div>
       <div class="exp-card-body">Exploring how design shapes the way people interact with systems. I'm curious about the gap between how things work and how they feel — and how good design closes it.</div>
-      <div class="exp-tag">BPM · WORKFLOWS · DESIGN</div>
+      <div class="exp-tag">WORKFLOWS · DESIGN · FIGMA</div>
+    </div>
+
+    <div class="exp-card card-purple">
+      <span class="exp-card-icon">📋</span>
+      <div class="exp-card-title">PROJECT MANAGEMENT</div>
+      <div class="exp-card-body">From collaborating across universities to leading restaurant operations for 75+ employees — I've built real project management experience by doing it, not just studying it. I'm drawn to the challenge of keeping people, timelines, and outcomes aligned.</div>
+      <div class="exp-tag">PROCESS IMPROVEMENT · AGILE · COORDINATION</div>
     </div>
 
   </div>
@@ -693,119 +963,288 @@
     <div class="section-title">EXPERIENCE &amp; COURSEWORK</div>
     <div class="section-line"></div>
   </div>
-  <div class="exp-timeline">
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-company">BUSINESS OPS<br>INTERNSHIP</div>
-        <div class="exp-date">Recent</div>
+  <p style="font-family:var(--font-body);font-size:15px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.4);line-height:1.8;max-width:560px;margin:0 auto 0.5rem;text-align:center;">"From taking orders to giving them — 6 years of building leadership, operations, and data skills one role at a time."</p>
+  <div style="font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,0.2);text-align:center;margin-bottom:2.5rem;letter-spacing:0.5px;">▸ Click any role to learn more</div>
+
+  <div style="position:relative;max-width:680px;margin:0 auto;">
+    <div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(255,255,255,0.08);transform:translateX(-50%);"></div>
+
+    <!-- CHAPTER: NOW -->
+    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · NOW</div>
+
+    <!-- INTERNSHIP — RIGHT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div></div>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-green);border:3px solid var(--dark);"></div>
       </div>
-      <div>
-        <div class="exp-role">Business Operations Optimization Intern <span style="font-weight:300;font-size:14px;color:rgba(255,255,255,0.4);">· Data & Analytics Focus</span></div>
-        <ul class="exp-bullets">
-          <li>Built executive-level attendance performance reports in Excel and Power BI — my first real taste of how data shapes leadership decisions.</li>
-          <li>Optimized attendance workflows, increasing weekly case processing capacity by <strong style="color:var(--px-yellow);">333%</strong> — from 30 to 130 cases per week.</li>
-          <li>Documented and restructured operational workflows to improve tracking and reporting consistency.</li>
-          <li>Designed Excel data entry tools for the attendance team to streamline progress tracking.</li>
-          <li>Presented findings to company leadership — good practice in translating data into a clear, actionable story.</li>
-        </ul>
-        <div>
-          <span class="exp-pill pill-data">DATA ANALYSIS</span>
-          <span class="exp-pill pill-ops">POWER BI</span>
-          <span class="exp-pill pill-pm">PROCESS OPT.</span>
+      <div style="padding-left:1.25rem;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2026 – Apr 2026 · 4 mos</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">NORFOLK SOUTHERN</div>
+        <div class="exp-role" onclick="toggleRole('internship')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          Business Optimization Intern <span style="font-weight:300;font-size:13px;color:rgba(255,255,255,0.35);">· Business/Data Analyst</span>
+          <span id="internship-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="internship-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Developed executive reporting dashboards using Excel and Power BI to support attendance management decisions.</li>
+            <li>Redesigned attendance workflows, increasing weekly processing capacity from 30 to 130 cases (<strong style="color:var(--px-yellow);">+333%</strong>).</li>
+            <li>Presented operational findings and recommendations to senior leadership.</li>
+            <li>Created standardized reporting and tracking systems to improve process consistency.</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-company">SUMMIT COFFEE</div>
-        <div class="exp-date">06/2025 – Present</div>
+    <!-- SUMMIT COFFEE — LEFT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div style="padding-right:1.25rem;text-align:right;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">2025 – Present</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">SUMMIT COFFEE</div>
+        <div class="exp-role" onclick="toggleRole('summit')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          <span id="summit-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">◂</span>
+          Asst. Manager
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="summit-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;text-align:left;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Leadership, customer service, and inventory management in a fast-paced environment.</li>
+            <li>Developing customer relations and team coordination skills.</li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <div class="exp-role">Barista · Assistant Manager</div>
-        <ul class="exp-bullets">
-          <li>Leadership, customer service, and inventory management in a fast-paced environment.</li>
-          <li>Developing customer relations and team coordination skills.</li>
-        </ul>
-        <div>
-          <span class="exp-pill pill-lead">LEADERSHIP</span>
-          <span class="exp-pill pill-ops">OPERATIONS</span>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-pink);border:3px solid var(--dark);"></div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- CHAPTER: CHICK-FIL-A -->
+    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · CHICK-FIL-A · 5 YRS 9 MOS</div>
+
+    <!-- DRIVE-THRU — RIGHT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div></div>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-green);border:3px solid var(--dark);"></div>
+      </div>
+      <div style="padding-left:1.25rem;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Feb 2024 – Feb 2025 · 1 yr 1 mo</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-dtc')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          Drive-Thru Coordinator
+          <span id="cfa-dtc-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="cfa-dtc-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Analyzed restaurant performance and revenue metrics to identify opportunities and implement process improvements driving sales and productivity growth.</li>
+            <li>Trained and developed upcoming leadership, preparing them for expanded roles and responsibilities.</li>
+            <li>Designed and developed training materials in Canva to support team member onboarding and standardize the training experience across the restaurant.</li>
+            <li>Conducted interviews for incoming team members to ensure new hires could uphold the restaurant's operational and service standards.</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-company">CHICK-FIL-A</div>
-        <div class="exp-date">06/2019 – 02/2025</div>
+    <!-- CULTIVATE — LEFT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div style="padding-right:1.25rem;text-align:right;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2023 – Feb 2024 · 1 yr 2 mos</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-cli')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          <span id="cfa-cli-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">◂</span>
+          Cultivate Intern
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="cfa-cli-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;text-align:left;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Managed inventory and cost control by analyzing ordering needs, balancing the budget, and coordinating truck orders to minimize waste.</li>
+            <li>Built and maintained scheduling for 75+ employees at an $8M/year location, balancing labor costs, productivity, time-off requests, and task delegation.</li>
+            <li>Implemented new operational processes to ensure consistent compliance with safety and productivity standards across the team.</li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <div class="exp-role">Shift Lead · Drive-Thru &amp; Efficiency Coordinator · Certified Trainer</div>
-        <ul class="exp-bullets">
-          <li>Progressed through Team Member → Certified Trainer → Shift Lead → Efficiency Coordinator over 6 years.</li>
-          <li>Led project management efforts including strategy development and operational procedure improvements.</li>
-          <li>Conducted productivity assessments and reported on performance to drive efficiency improvements.</li>
-          <li>Trained new team members and ensured regulatory compliance across shifts.</li>
-        </ul>
-        <div>
-          <span class="exp-pill pill-pm">PROJECT MGMT</span>
-          <span class="exp-pill pill-lead">TRAINING</span>
-          <span class="exp-pill pill-ops">EFFICIENCY</span>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-purple);border:3px solid var(--dark);"></div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- SHIFT LEADER — RIGHT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div></div>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-cyan);border:3px solid var(--dark);"></div>
+      </div>
+      <div style="padding-left:1.25rem;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2021 – Jan 2023 · 2 yrs 1 mo</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-sl')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          Shift Leader
+          <span id="cfa-sl-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="cfa-sl-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Led shift operations including opening/closing procedures, cash handling, team delegation, and speed of service — ensuring smooth, high-volume service execution.</li>
+            <li>Upheld Chick-fil-A's guest experience and food safety standards by resolving customer concerns in real time and monitoring quality compliance across every shift.</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-company">GSU<br>COURSEWORK</div>
-        <div class="exp-date">Ongoing</div>
+    <!-- CHAPTER: WHERE IT STARTED -->
+    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · WHERE IT STARTED</div>
+
+    <!-- CERTIFIED TRAINER — LEFT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div style="padding-right:1.25rem;text-align:right;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2020 – Jan 2021 · 1 yr 1 mo</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-ct')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          <span id="cfa-ct-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">◂</span>
+          Certified Trainer
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="cfa-ct-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;text-align:left;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Onboarded and trained new team members on service standards, food safety, and operational procedures while beginning formal leadership development.</li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <div class="exp-role">Relevant Courses</div>
-        <ul class="exp-bullets">
-          <li><strong style="color:rgba(255,255,255,0.85);">Managing with AI</strong> — information systems management, agile vs. plan-driven methods, AI-driven project automation, and risk assessment.</li>
-          <li><strong style="color:rgba(255,255,255,0.85);">Intro to CIS</strong> — data analysis in Excel: pivot charts, pivot tables, VLOOKUP, XLOOKUP, and data visualization methods.</li>
-          <li><strong style="color:rgba(255,255,255,0.85);">Intro to Programming</strong> — problem analysis, program design, debugging, and code optimization in Python.</li>
-        </ul>
-        <div>
-          <span class="exp-pill pill-data">DATA</span>
-          <span class="exp-pill pill-ops">PYTHON</span>
-          <span class="exp-pill pill-pm">AI &amp; AGILE</span>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-yellow);border:3px solid var(--dark);"></div>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- TEAM MEMBER — RIGHT -->
+    <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
+      <div></div>
+      <div style="display:flex;justify-content:center;padding-top:3px;position:relative;z-index:2;">
+        <div style="width:16px;height:16px;border-radius:50%;background:var(--px-pink);border:3px solid var(--dark);"></div>
+      </div>
+      <div style="padding-left:1.25rem;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jun 2019 – Jan 2020 · 8 mos</div>
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-tm')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+          Team Member
+          <span id="cfa-tm-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
+        </div>
+        <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
+        <div id="cfa-tm-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;">
+          <ul class="exp-bullets" style="margin-top:0.75rem;">
+            <li>Delivered fast, accurate food service and exceptional customer experience as a frontline team member in a high-volume quick-service environment.</li>
+          </ul>
         </div>
       </div>
     </div>
+
+    <!-- CHAPTER: ALWAYS LEARNING -->
+    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · ALWAYS LEARNING</div>
+
+  </div>
+
+  <!-- COURSEWORK CARDS -->
+  <div style="max-width:680px;margin:0 auto;padding-top:0.5rem;">
+    <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-yellow);letter-spacing:2px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;">
+      GSU · RELEVANT COURSEWORK
+      <span style="flex:1;height:1px;background:rgba(255,255,255,0.08);display:block;"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;">
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-green);">
+        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-green);margin-bottom:6px;line-height:1.8;">MANAGING WITH AI</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Information systems, agile methods, AI-driven project automation, risk assessment.</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-cyan);">
+        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);margin-bottom:6px;line-height:1.8;">INTRO TO CIS</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Data analysis in Excel: pivot charts, pivot tables, VLOOKUP, XLOOKUP, and data visualization.</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-pink);">
+        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-pink);margin-bottom:6px;line-height:1.8;">INTRO TO PROGRAMMING</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Problem analysis, program design, debugging, and code optimization in Python.</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-yellow);">
+        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-yellow);margin-bottom:6px;line-height:1.8;">BUSINESS COMMUNICATION</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Professional written, oral, and interpersonal communication; persuasion and career strategy.</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-purple);">
+        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-purple);margin-bottom:6px;line-height:1.8;">BUSINESS ANALYSIS MGMT</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Decision modeling: simulation, optimization, forecasting, and Monte Carlo analysis.</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-green);">
+        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-green);margin-bottom:6px;line-height:1.8;">MANAGING PEOPLE IN ORGS</div>
+        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Leadership, workplace dynamics, and organizational behavior self-assessment.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  <div style="position:relative;padding-left:2.5rem;">
+    <div style="position:absolute;left:10px;top:8px;bottom:0;width:2px;background:rgba(255,255,255,0.08);"></div>
+
+    <!-- CHAPTER: NOW -->
 
   </div>
 </section>
-<section id="data" class="data-section">
+<!-- PROJECTS -->
+<section id="projects" class="projects-section">
   <div class="section-header">
     <div class="section-num">04</div>
-    <div class="section-title">DATA AT A GLANCE</div>
+    <div class="section-title">PROJECTS</div>
     <div class="section-line"></div>
   </div>
+  <div class="projects-grid">
 
-  <div class="stats-grid">
-    <div class="stat-card s-green">
-      <div class="stat-label">WORKFLOW IMPROVEMENT</div>
-      <div class="stat-num">333%</div>
-      <div class="stat-desc">Increase in weekly case processing capacity</div>
-    </div>
-    <div class="stat-card s-pink">
-      <div class="stat-label">GPA</div>
-      <div class="stat-num">3.28</div>
-      <div class="stat-desc">Georgia State University · President's List</div>
-    </div>
-    <div class="stat-card s-cyan">
-      <div class="stat-label">YEARS OF WORK EXPERIENCE</div>
-      <div class="stat-num">6+</div>
-      <div class="stat-desc">Operations, leadership & data-driven roles</div>
-    </div>
-  </div>
+    <a class="project-card pc-cyan" href="dignified-days.html">
+      <div class="pc-type t-cyan">TECH CONSULTING · DATA</div>
+      <div class="pc-title">DIGNIFIED DAYS<br>BUSINESS CASE</div>
+      <div class="pc-desc">A full consulting business case evaluating three strategic alternatives — status quo, outsourcing, and AI integration — to reduce CSR call volume by 25% at a home hospice equipment provider.</div>
+      <div class="pc-tags">
+        <span class="pc-tag">Business Case</span>
+        <span class="pc-tag">NPV Analysis</span>
+        <span class="pc-tag">AI Strategy</span>
+        <span class="pc-tag">HIPAA</span>
+      </div>
+      <div class="pc-cta">VIEW CASE STUDY</div>
+    </a>
 
-  <div class="chart-wrap">
-    <div class="chart-label">SKILLS PROFICIENCY · SELF-ASSESSED</div>
-    <div class="bar-chart" id="barChart"></div>
+    <a class="project-card pc-green" href="colombia-eti.html">
+      <div class="pc-type t-green">RESEARCH · SUSTAINABILITY</div>
+      <div class="pc-title">COLOMBIA<br>SUSTAINABILITY ETI</div>
+      <div class="pc-desc">A cross-university Virtual Exchange Project with UNIFOR Brazil analyzing two emerging sustainability innovations in Colombia — enhanced weathering and renewable energy transition — and their impact on business, policy, and communities.</div>
+      <div class="pc-tags">
+        <span class="pc-tag">International Business</span>
+        <span class="pc-tag">ESG</span>
+        <span class="pc-tag">Policy Analysis</span>
+        <span class="pc-tag">Emerging Markets</span>
+      </div>
+      <div class="pc-cta">VIEW CASE STUDY</div>
+    </a>
+
+    <a class="project-card pc-yellow" href="madd-marketing.html">
+      <div class="pc-type t-yellow">MARKETING · STRATEGY</div>
+      <div class="pc-title">MADD MARKETING:<br>DIAZ BROTHERS</div>
+      <div class="pc-desc">A full annual marketing plan for a real local restaurant in Norcross, GA — including a SWOT analysis, 4 P's audit, target audience definition, digital & traditional recommendations, and a 12-month implementation roadmap.</div>
+      <div class="pc-tags">
+        <span class="pc-tag">SWOT Analysis</span>
+        <span class="pc-tag">4 P's Framework</span>
+        <span class="pc-tag">Digital Strategy</span>
+        <span class="pc-tag">Roadmapping</span>
+      </div>
+      <div class="pc-cta">VIEW CASE STUDY</div>
+    </a>
+
+    <div class="project-card pc-pink" style="opacity:0.5;cursor:default;pointer-events:none;">
+      <div class="pc-type t-pink">COMING SOON</div>
+      <div class="pc-title">MORE ON<br>THE WAY</div>
+      <div class="pc-desc">More projects coming as I continue building out my portfolio with coursework and real-world work. Stay tuned for updates.</div>
+    </div>
+
   </div>
 </section>
 
@@ -819,19 +1258,55 @@
   <div class="tools-grid" id="toolsGrid"></div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section class="tools-section">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-title">CERTIFICATIONS</div>
+    <div class="section-line"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;align-items:stretch;">
+
+    <div style="background:#fff;border:2px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+      <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-green);z-index:-1;"></div>
+      <div style="font-family:var(--font-pixel);font-size:8px;color:var(--px-green);margin-bottom:0.75rem;">GEORGIA STATE UNIVERSITY</div>
+      <div style="font-family:var(--font-pixel);font-size:11px;line-height:2;margin-bottom:0.75rem;">INTERNATIONAL VIRTUAL<br>EXCHANGE BADGE</div>
+      <div style="font-family:var(--font-mono);font-size:12px;color:#999;">Issued Mar 2026</div>
+    </div>
+
+    <div style="background:#fff;border:2px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+      <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-yellow);z-index:-1;"></div>
+      <div style="font-family:var(--font-pixel);font-size:8px;color:#888;margin-bottom:0.75rem;">LINKEDIN</div>
+      <div style="font-family:var(--font-pixel);font-size:11px;line-height:2;margin-bottom:0.75rem;">LEARNING SQL<br>PROGRAMMING</div>
+      <div style="font-family:var(--font-mono);font-size:12px;color:#999;">Issued Nov 2025</div>
+    </div>
+
+    <div style="background:#fff;border:2px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;opacity:0.5;cursor:default;">
+      <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-pink);z-index:-1;"></div>
+      <div style="font-family:var(--font-pixel);font-size:8px;color:var(--px-pink);margin-bottom:0.75rem;">COMING SOON</div>
+      <div style="font-family:var(--font-pixel);font-size:11px;line-height:2;margin-bottom:0.75rem;">MORE ON<br>THE WAY</div>
+      <div style="font-size:12px;font-weight:300;color:#777;line-height:1.6;">More certifications in progress — stay tuned for updates.</div>
+    </div>
+
+
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="section-header" style="justify-content:center;">
-    <div class="section-num" style="color:var(--dark);background:var(--px-yellow);border-color:var(--px-yellow);">06</div>
+    <div class="section-num" style="color:var(--dark);background:var(--px-yellow);border-color:var(--px-yellow);">07</div>
     <div class="section-title" style="color:#fff;">LET'S CONNECT</div>
   </div>
   <p class="contact-sub">
-    Looking for internships, entry-level opportunities, and people doing<br>interesting work at the intersection of data, design, and technology.
+    Open to entry-level opportunities, collaborations, and people doing<br>interesting work at the intersection of data, operations, and technology.
   </p>
   <div class="contact-links">
     <a class="contact-link primary" href="mailto:aacranmer@gmail.com">EMAIL ME</a>
     <a class="contact-link secondary" href="https://www.linkedin.com/in/ashlee-cranmer/" target="_blank">LINKEDIN</a>
     <a class="contact-link secondary" href="tel:4042737314">CALL / TEXT</a>
+    <a class="contact-link secondary" href="#">DOWNLOAD RESUME</a>
   </div>
 </section>
 
@@ -872,14 +1347,35 @@
   });
 })();
 
+/* ── scroll reveal ── */
+(function() {
+  const targets = document.querySelectorAll(
+    '.project-card, .exp-card, .stat-card, .exp-item, .tool-pill, .edu-card'
+  );
+  const style = document.createElement('style');
+  style.textContent = `
+    .reveal-hidden { opacity:0; transform:translateY(28px); transition:opacity 0.5s ease, transform 0.5s ease; }
+    .reveal-visible { opacity:1 !important; transform:translateY(0) !important; }
+  `;
+  document.head.appendChild(style);
+  targets.forEach((el, i) => {
+    el.classList.add('reveal-hidden');
+    el.style.transitionDelay = (i % 6) * 0.07 + 's';
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('reveal-visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  targets.forEach(el => obs.observe(el));
+})();
+
 /* ── skills ticker ── */
 (function() {
   const skills = [
-    'EXCEL','POWER BI','PYTHON','TABLEAU','DATA CLEANING',
-    'PIVOT TABLES','VLOOKUP / XLOOKUP','BUSINESS PROCESS MODELING',
-    'AGILE','RISK ASSESSMENT','PROCESS OPTIMIZATION',
-    'IT SOLUTION DESIGN','MICROSOFT OFFICE','DATA VISUALIZATION',
-    'WORKFORCE ANALYTICS','DIGITAL TRANSFORMATION'
+    'EXCEL','POWER BI','PYTHON','SQL','TABLEAU','DATA CLEANING',
+    'DATA VISUALIZATION','PIVOT TABLES','VLOOKUP / XLOOKUP','AGILE',
+    'PROCESS OPTIMIZATION','WORKFLOW DESIGN','PROJECT MANAGEMENT',
+    'IT SOLUTION DESIGN','TECH CONSULTING','UX THINKING',
+    'MICROSOFT OFFICE','DIGITAL TRANSFORMATION','LEADERSHIP','OPERATIONS'
   ];
   const ticker = document.getElementById('ticker');
   if (!ticker) return;
@@ -892,53 +1388,19 @@
   });
 })();
 
-/* ── bar chart ── */
-(function() {
-  const bars = [
-    { label: 'Excel',    val: 90, color: '#39FF14' },
-    { label: 'Power BI', val: 80, color: '#00F5FF' },
-    { label: 'Python',   val: 65, color: '#B44FFF' },
-    { label: 'Tableau',  val: 70, color: '#FFE600' },
-    { label: 'Agile',    val: 75, color: '#FF6B9D' },
-  ];
-  const container = document.getElementById('barChart');
-  if (!container) return;
-  const maxH = 110;
-  bars.forEach(b => {
-    const wrap = document.createElement('div');
-    wrap.className = 'bar-wrap';
-    const val = document.createElement('div');
-    val.className = 'bar-val';
-    val.textContent = b.val + '%';
-    const barEl = document.createElement('div');
-    barEl.className = 'bar';
-    barEl.style.height = Math.round((b.val / 100) * maxH) + 'px';
-    barEl.style.background = b.color;
-    const lbl = document.createElement('div');
-    lbl.className = 'bar-lbl';
-    lbl.textContent = b.label;
-    wrap.appendChild(val);
-    wrap.appendChild(barEl);
-    wrap.appendChild(lbl);
-    container.appendChild(wrap);
-  });
-})();
-
 /* ── tools grid ── */
 (function() {
   const tools = [
     { name: 'Microsoft Excel',  color: '#39FF14' },
     { name: 'Power BI',         color: '#00F5FF' },
     { name: 'Python',           color: '#B44FFF' },
-    { name: 'Tableau',          color: '#FFE600' },
     { name: 'Microsoft Office', color: '#FF6B9D' },
-    { name: 'Pivot Tables',     color: '#FF8C42' },
-    { name: 'VLOOKUP / XLOOKUP',color: '#39FF14' },
     { name: 'Agile / Scrum',    color: '#FFE600' },
-    { name: 'Process Modeling', color: '#00F5FF' },
+    { name: 'SQL',              color: '#7DDEE8' },
     { name: 'Data Cleaning',    color: '#B44FFF' },
-    { name: 'IT Solution Design',color: '#FF6B9D' },
     { name: 'Risk Assessment',  color: '#FF8C42' },
+    { name: 'Smartsheet',       color: '#39FF14' },
+    { name: 'Figma',            color: '#FF6B9D' },
   ];
   const grid = document.getElementById('toolsGrid');
   if (!grid) return;
@@ -949,6 +1411,41 @@
     grid.appendChild(pill);
   });
 })();
+
+/* ── ROLE TOGGLE ── */
+function toggleRole(id) {
+  const content = document.getElementById(id + '-content');
+  const arrow = document.getElementById(id + '-arrow');
+  if (!content) return;
+  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+  if (isOpen) {
+    content.style.maxHeight = '0';
+    content.style.opacity = '0';
+    arrow.style.transform = 'rotate(0deg)';
+  } else {
+    content.style.maxHeight = content.scrollHeight + 'px';
+    content.style.opacity = '1';
+    arrow.style.transform = 'rotate(90deg)';
+  }
+}
+
+/* ── COURSEWORK TOGGLE ── */
+function toggleCoursework() {
+  const content = document.getElementById('courseworkContent');
+  const arrow = document.getElementById('courseworkArrow');
+  const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+  if (isOpen) {
+    content.style.maxHeight = '0';
+    content.style.opacity = '0';
+    arrow.style.transform = 'rotate(0deg)';
+  } else {
+    content.style.maxHeight = content.scrollHeight + 'px';
+    content.style.opacity = '1';
+    arrow.style.transform = 'rotate(90deg)';
+  }
+}
+
+
 </script>
 </body>
 </html>
