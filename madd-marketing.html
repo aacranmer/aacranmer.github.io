@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MADD Marketing · Diaz Brothers · Ashlee Cranmer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --cream:#F5F0E8; --dark:#1A1A2E; --px-pink:#F0A0BC; --px-cyan:#7DDEE8; --px-yellow:#F0D080; --px-green:#88D87A; --px-purple:#C0A0E8; --font-pixel:'Press Start 2P',monospace; --font-body:'DM Sans',sans-serif; --font-mono:'Space Mono',monospace; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--cream); color:var(--dark); font-family:var(--font-body); overflow-x:hidden; }
+
+  nav { position:sticky; top:0; z-index:100; background:var(--dark); border-bottom:4px solid var(--px-yellow); padding:0 2.5rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
+  .nav-back { font-family:var(--font-pixel); font-size:8px; color:var(--px-yellow); text-decoration:none; letter-spacing:1px; transition:opacity 0.15s; }
+  .nav-back:hover { opacity:0.7; }
+  .nav-logo { font-family:var(--font-pixel); font-size:9px; color:var(--px-yellow); }
+
+  .hero { background:var(--dark); padding:4rem 3rem 3rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(240,208,128,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(240,208,128,0.05) 1px,transparent 1px); background-size:32px 32px; }
+  .hero-eyebrow { font-family:var(--font-pixel); font-size:7px; color:var(--px-yellow); letter-spacing:2px; margin-bottom:1rem; position:relative; }
+  .hero-eyebrow::before { content:'> '; color:var(--px-pink); }
+  .hero-title { font-family:var(--font-pixel); font-size:clamp(12px,2vw,18px); color:#fff; line-height:2.2; margin-bottom:0.75rem; position:relative; }
+  .hero-title span { color:var(--px-yellow); }
+  .hero-sub { font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); max-width:620px; line-height:1.85; margin-bottom:2rem; position:relative; }
+  .hero-pills { display:flex; flex-wrap:wrap; gap:0.75rem; position:relative; }
+  .hero-pill { font-family:var(--font-pixel); font-size:6px; padding:6px 12px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.55); letter-spacing:1px; }
+  .hero-pill span { color:var(--px-yellow); margin-right:6px; }
+
+  .content { max-width:860px; margin:0 auto; padding:3rem 2rem; }
+  .cs-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-yellow); letter-spacing:2px; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
+  .cs-label::after { content:''; flex:1; height:1px; background:rgba(240,208,128,0.2); }
+  .cs-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
+  .cs-body strong { font-weight:500; color:var(--dark); }
+  .px-divider { height:3px; background:repeating-linear-gradient(90deg,var(--dark) 0,var(--dark) 8px,transparent 8px,transparent 16px); opacity:0.1; margin:2.5rem 0; }
+
+  /* CLIENT BANNER */
+  .client-banner { background:var(--dark); border:2px solid var(--px-yellow); padding:1.75rem; margin:1.5rem 0; position:relative; }
+  .client-banner::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; background:var(--px-yellow); z-index:-1; }
+  .cb-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-yellow); margin-bottom:1rem; }
+  .cb-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1.25rem; }
+  .cb-item-label { font-family:var(--font-pixel); font-size:7px; color:rgba(255,255,255,0.3); margin-bottom:4px; }
+  .cb-item-val { font-family:var(--font-mono); font-size:12px; color:rgba(255,255,255,0.8); line-height:1.6; }
+
+  /* SWOT */
+  .swot-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
+  @media(max-width:560px){ .swot-grid{grid-template-columns:1fr;} }
+  .swot-card { padding:1.25rem; border:2px solid; }
+  .swot-card.sw-s { background:rgba(136,216,122,0.06); border-color:var(--px-green); }
+  .swot-card.sw-w { background:rgba(240,160,188,0.06); border-color:var(--px-pink); }
+  .swot-card.sw-o { background:rgba(125,222,232,0.06); border-color:var(--px-cyan); }
+  .swot-card.sw-t { background:rgba(240,208,128,0.06); border-color:var(--px-yellow); }
+  .swot-label { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.6rem; }
+  .sw-s .swot-label{color:var(--px-green);} .sw-w .swot-label{color:var(--px-pink);} .sw-o .swot-label{color:var(--px-cyan);} .sw-t .swot-label{color:var(--px-yellow);}
+  .swot-list { list-style:none; padding:0; }
+  .swot-list li { font-size:13px; font-weight:300; color:#444; line-height:1.7; padding:0.2rem 0 0.2rem 1rem; position:relative; }
+  .swot-list li::before { content:'▸'; position:absolute; left:0; font-size:9px; top:5px; }
+  .sw-s li::before{color:var(--px-green);} .sw-w li::before{color:var(--px-pink);} .sw-o li::before{color:var(--px-cyan);} .sw-t li::before{color:var(--px-yellow);}
+
+  /* 4 P's */
+  .four-p-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:1rem; margin:1.5rem 0; }
+  .p-card { background:#fff; border:2px solid var(--dark); padding:1.4rem; position:relative; transition:transform 0.15s; }
+  .p-card::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
+  .p-card:hover { transform:translate(-2px,-2px); }
+  .p-card.pc-prod::after{background:var(--px-cyan);} .p-card.pc-price::after{background:var(--px-green);} .p-card.pc-place::after{background:var(--px-yellow);} .p-card.pc-promo::after{background:var(--px-pink);}
+  .p-label { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.5rem; }
+  .pc-prod .p-label{color:var(--px-cyan);} .pc-price .p-label{color:var(--px-green);} .pc-place .p-label{color:var(--px-yellow);} .pc-promo .p-label{color:var(--px-pink);}
+  .p-title { font-family:var(--font-pixel); font-size:8px; margin-bottom:0.5rem; line-height:1.8; }
+  .p-body { font-size:13px; font-weight:300; color:#666; line-height:1.65; }
+
+  /* RECOMMENDATIONS */
+  .rec-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
+  @media(max-width:560px){ .rec-grid{grid-template-columns:1fr;} }
+  .rec-card { background:var(--dark); border:2px solid; padding:1.75rem; }
+  .rec-card.rc-d{border-color:var(--px-cyan);} .rec-card.rc-t{border-color:var(--px-yellow);}
+  .rc-label { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.75rem; }
+  .rc-d .rc-label{color:var(--px-cyan);} .rc-t .rc-label{color:var(--px-yellow);}
+  .rc-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
+  .rc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:0.75rem; }
+  .rc-tag { font-family:var(--font-mono); font-size:10px; padding:3px 8px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.5); }
+
+  /* BUDGET & ROADMAP */
+  .budget-strip { background:var(--dark); border-left:4px solid var(--px-green); padding:1.5rem 2rem; margin:1.5rem 0; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
+  .bs-num { font-family:var(--font-pixel); font-size:20px; color:var(--px-yellow); flex-shrink:0; line-height:1.4; }
+  .bs-desc { font-size:14px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.7; }
+  .phase-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0; }
+  @media(max-width:560px){ .phase-grid{grid-template-columns:1fr;} }
+  .phase-card { background:#fff; border:2px solid var(--dark); padding:1.5rem; position:relative; }
+  .phase-card::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
+  .phase-card:nth-child(1)::after{background:var(--px-cyan);} .phase-card:nth-child(2)::after{background:var(--px-yellow);} .phase-card:nth-child(3)::after{background:var(--px-pink);}
+  .ph-label { font-family:var(--font-pixel); font-size:6px; color:#aaa; margin-bottom:6px; }
+  .ph-title { font-family:var(--font-pixel); font-size:8px; margin-bottom:0.6rem; line-height:1.8; }
+  .ph-body { font-size:13px; font-weight:300; color:#666; line-height:1.65; }
+
+  /* REFLECTION */
+  .reflection { background:#fff; border:2px solid var(--dark); padding:2rem; position:relative; }
+  .reflection::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; background:var(--px-yellow); z-index:-1; }
+  .ref-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-yellow); background:var(--dark); display:inline-block; padding:5px 10px; margin-bottom:1rem; }
+  .ref-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
+  .ref-body strong { font-weight:500; color:var(--dark); }
+
+  .back-wrap { text-align:center; padding:3rem 0 4rem; }
+  .back-btn { display:inline-block; font-family:var(--font-pixel); font-size:8px; padding:14px 28px; background:var(--dark); color:var(--px-yellow); border:2px solid var(--dark); text-decoration:none; letter-spacing:1px; box-shadow:5px 5px 0 var(--px-yellow); transition:transform 0.1s,box-shadow 0.1s; }
+  .back-btn:hover { transform:translate(-3px,-3px); box-shadow:8px 8px 0 var(--px-yellow); }
+  @media(max-width:600px){ .content{padding:2rem 1.25rem;} .hero{padding:3rem 1.5rem 2.5rem;} }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="index.html">← BACK TO PORTFOLIO</a>
+  <div class="nav-logo">AC.EXE</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">MARKETING PLAN · TEAM PROJECT · MARKETING COURSE</div>
+  <h1 class="hero-title">DIAZ BROTHERS<br><span>TACOS & MARGARITAS</span>:<br>ANNUAL MARKETING PLAN</h1>
+  <p class="hero-sub">A full marketing makeover for a real local restaurant in Norcross, GA — SWOT analysis, 4 P's audit, digital and traditional recommendations, and a phased 12-month roadmap on a $600–$1,000/month budget.</p>
+  <div class="hero-pills">
+    <div class="hero-pill"><span>COURSE</span>Marketing · Georgia State University</div>
+    <div class="hero-pill"><span>TEAM</span>MADD Marketing, Inc. — Group #3</div>
+    <div class="hero-pill"><span>ROLE</span>Group Leader</div>
+    <div class="hero-pill"><span>BUDGET</span>$600–$1,000/month</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 01 THE CLIENT -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">01 · THE CLIENT</div>
+    <div class="client-banner">
+      <div class="cb-label">DIAZ BROTHERS TACOS & MARGARITAS · NORCROSS, GA</div>
+      <div class="cb-grid">
+        <div><div class="cb-item-label">FOUNDED</div><div class="cb-item-val">2022 · Jose & Marino Diaz · 20+ yrs culinary experience</div></div>
+        <div><div class="cb-item-label">CURRENT MARKETING</div><div class="cb-item-val">Word of mouth, light social media, one daily deal, annual Cinco de Mayo event</div></div>
+        <div><div class="cb-item-label">CORE CHALLENGE</div><div class="cb-item-val">Chain competition moving in nearby, no delivery apps, inconsistent digital presence</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 02 SWOT -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">02 · SWOT ANALYSIS</div>
+    <div class="cs-body" style="margin-bottom:1rem;">We started by mapping the restaurant's current position — what's working, what's holding it back, and where the real opportunities are.</div>
+    <div class="swot-grid">
+      <div class="swot-card sw-s"><div class="swot-label">STRENGTHS</div><ul class="swot-list"><li>20+ years combined culinary experience</li><li>Loyal word-of-mouth customer base</li><li>Competitive pricing drives volume</li></ul></div>
+      <div class="swot-card sw-w"><div class="swot-label">WEAKNESSES</div><ul class="swot-list"><li>Physical appearance doesn't reflect food quality</li><li>No DoorDash or Uber Eats presence</li><li>Inconsistent social media and branding</li></ul></div>
+      <div class="swot-card sw-o"><div class="swot-label">OPPORTUNITIES</div><ul class="swot-list"><li>Delivery apps to reach broader local audience</li><li>Food content performs well on TikTok/Instagram</li><li>Authentic atmosphere is a real differentiator</li></ul></div>
+      <div class="swot-card sw-t"><div class="swot-label">THREATS</div><ul class="swot-list"><li>Similar chain restaurant moving nearby</li><li>Rising ingredient and supply costs</li><li>Losing customers to delivery-enabled competitors</li></ul></div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 03 4 P's -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">03 · 4 P'S ADJUSTMENTS</div>
+    <div class="cs-body" style="margin-bottom:1rem;">Using the 4 P's framework, we identified specific, actionable changes across each dimension of the business.</div>
+    <div class="four-p-grid">
+      <div class="p-card pc-prod"><div class="p-label">PRODUCT</div><div class="p-title">REFINE & ADD</div><div class="p-body">New authentic dishes, improved food presentation for social shareability, open kitchen concept.</div></div>
+      <div class="p-card pc-price"><div class="p-label">PRICE</div><div class="p-title">BUNDLE DEALS</div><div class="p-body">Value meal bundles during peak hours to compete with chains on price without sacrificing quality.</div></div>
+      <div class="p-card pc-place"><div class="p-label">PLACE</div><div class="p-title">GET ON DELIVERY</div><div class="p-body">Join DoorDash and Uber Eats. Not being there means losing customers to restaurants who are.</div></div>
+      <div class="p-card pc-promo"><div class="p-label">PROMOTION</div><div class="p-title">BUILD DIGITAL</div><div class="p-body">Consistent TikTok/Instagram strategy, geo-targeted ads, loyalty cards to drive repeat visits.</div></div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 04 RECOMMENDATIONS -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">04 · RECOMMENDATIONS</div>
+    <div class="cs-body" style="margin-bottom:1rem;">Our final recommendations split across two channels — digital for reach, traditional for retention.</div>
+    <div class="rec-grid">
+      <div class="rec-card rc-d">
+        <div class="rc-label">DIGITAL</div>
+        <div class="rc-body">TikTok and Instagram with behind-the-scenes food content, geo-targeted paid ads within 5 miles, and consistent organic posting 3–4x/week to build authentic presence.</div>
+        <div class="rc-tags"><span class="rc-tag">TikTok</span><span class="rc-tag">Instagram</span><span class="rc-tag">Google Ads</span><span class="rc-tag">DoorDash</span></div>
+      </div>
+      <div class="rec-card rc-t">
+        <div class="rc-label">TRADITIONAL</div>
+        <div class="rc-body">Loyalty card program rewarding repeat visits, sidewalk A-frame signage, branded to-go bags, free sampling in nearby apartment complexes and office parks.</div>
+        <div class="rc-tags"><span class="rc-tag">Loyalty Cards</span><span class="rc-tag">Sampling</span><span class="rc-tag">Signage</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 05 BUDGET & ROADMAP -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">05 · BUDGET & ROADMAP</div>
+    <div class="budget-strip">
+      <div class="bs-num">$600–$1K<br><span style="font-size:10px;color:rgba(255,255,255,0.4);">/month</span></div>
+      <div class="bs-desc">Weighted toward digital (60%) for maximum reach at minimum cost, with the remainder on content production and traditional materials.</div>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-card"><div class="ph-label">MONTHS 1–4</div><div class="ph-title">FOUNDATION</div><div class="ph-body">Brand identity refresh, professional photos, launch TikTok & Instagram, loyalty cards, sign up for delivery apps.</div></div>
+      <div class="phase-card"><div class="ph-label">MONTHS 5–8</div><div class="ph-title">GROWTH</div><div class="ph-body">Review delivery performance, start paid ads, decor upgrades, expand loyalty program with birthday rewards and surveys.</div></div>
+      <div class="phase-card"><div class="ph-label">MONTHS 9–12</div><div class="ph-title">SCALE</div><div class="ph-body">Newsletter launch, influencer collabs, Atlanta-wide ad targeting, year-in-review community post.</div></div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 06 REFLECTION -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">06 · REFLECTION</div>
+    <div class="reflection">
+      <div class="ref-label">WHAT I LEARNED</div>
+      <div class="ref-body">Leading this project gave me a real taste of what it means to <strong>coordinate a team toward a shared deliverable</strong> — keeping everyone aligned, managing timelines, and making sure the final plan came together as a cohesive whole rather than disconnected pieces. Working on a real local business made the stakes feel genuine. The biggest takeaway: <strong>good marketing strategy isn't about spending more — it's about being intentional with where and how you show up</strong>. For a small restaurant competing against chains, authenticity is the competitive advantage.</div>
+    </div>
+  </div>
+
+</div>
+<div class="back-wrap"><a class="back-btn" href="index.html">← BACK TO PORTFOLIO</a></div>
+</body>
+</html>
