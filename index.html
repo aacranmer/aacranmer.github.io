@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashlee Cranmer · Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,9 +19,9 @@
     --px-green: #88D87A;
     --px-purple: #C0A0E8;
     --px-orange: #F0B088;
-    --font-pixel: 'Press Start 2P', monospace;
+    --font-pixel: 'IBM Plex Mono', monospace;
     --font-body: 'DM Sans', sans-serif;
-    --font-mono: 'Space Mono', monospace;
+    --font-mono: 'IBM Plex Mono', monospace;
   }
 
   html { scroll-behavior: smooth; }
@@ -43,15 +43,17 @@
     height: 56px;
   }
   .nav-logo {
-    font-family: var(--font-pixel);
-    font-size: 9px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
     color: var(--px-yellow);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a {
-    font-family: var(--font-mono);
-    font-size: 11px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
     color: #fff;
     text-decoration: none;
     opacity: 0.65;
@@ -97,10 +99,11 @@
   .hero-tag::before { content: '> '; color: var(--px-green); }
 
   .hero-name {
-    font-family: var(--font-pixel);
-    font-size: clamp(14px, 2.2vw, 20px);
+    font-family: var(--font-body);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 500;
     color: #fff;
-    line-height: 2.2;
+    line-height: 1.2;
     margin-bottom: 0.25rem;
     position: relative;
   }
@@ -109,11 +112,11 @@
 
   .hero-title {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 11px;
     color: var(--px-cyan);
     margin-bottom: 1.25rem;
     position: relative;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
 
   .hero-sub {
@@ -129,11 +132,11 @@
 
   .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
   .badge {
-    font-family: var(--font-pixel);
-    font-size: 7px;
-    padding: 8px 14px;
-    border: 2px solid;
-    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 6px 14px;
+    border: 1.5px solid;
+    letter-spacing: 0.5px;
     cursor: default;
     transition: transform 0.1s;
   }
@@ -160,10 +163,12 @@
     flex-shrink: 0;
   }
   .section-title {
-    font-family: var(--font-pixel);
-    font-size: clamp(9px, 1.4vw, 13px);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
     color: var(--dark);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   .section-line {
     flex: 1;
@@ -190,7 +195,7 @@
   .about-text strong { font-weight: 500; color: var(--dark); }
   .edu-card {
     background: #fff;
-    border: 2px solid var(--dark);
+    border: 1.5px solid var(--dark);
     padding: 1.75rem;
     position: relative;
     margin-top: 1.5rem;
@@ -205,23 +210,25 @@
     z-index: -1;
   }
   .edu-label {
-    font-family: var(--font-pixel);
-    font-size: 7px;
+    font-family: var(--font-mono);
+    font-size: 9px;
     color: var(--px-yellow);
     background: var(--dark);
     display: inline-block;
-    padding: 5px 10px;
+    padding: 4px 10px;
     margin-bottom: 1rem;
+    letter-spacing: 1px;
   }
   .edu-school {
-    font-family: var(--font-pixel);
-    font-size: 9px;
-    line-height: 1.9;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
     margin-bottom: 0.5rem;
   }
   .edu-degree {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     color: #333;
     margin-bottom: 0.5rem;
   }
@@ -233,12 +240,13 @@
   }
   .edu-honor {
     display: inline-block;
-    font-family: var(--font-pixel);
-    font-size: 7px;
+    font-family: var(--font-mono);
+    font-size: 9px;
     color: var(--dark);
     background: var(--px-yellow);
     padding: 4px 10px;
     margin-top: 0.75rem;
+    letter-spacing: 0.5px;
   }
 
   /* ── EXPERTISE CARDS ── */
@@ -249,7 +257,7 @@
   }
   .exp-card {
     background: #fff;
-    border: 2px solid var(--dark);
+    border: 1.5px solid var(--dark);
     padding: 1.75rem;
     position: relative;
     transition: transform 0.15s;
@@ -280,10 +288,13 @@
     display: block;
   }
   .exp-card-title {
-    font-family: var(--font-pixel);
-    font-size: 8px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
     margin-bottom: 0.75rem;
-    line-height: 1.9;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
   .exp-card-body {
     font-size: 13.5px;
@@ -294,11 +305,12 @@
   }
   .exp-tag {
     font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 4px 8px;
+    font-size: 9px;
+    padding: 4px 10px;
     background: var(--dark);
-    color: #fff;
+    color: rgba(255,255,255,0.7);
     display: inline-block;
+    letter-spacing: 0.5px;
   }
 
   /* ── SKILLS TICKER ── */
@@ -349,29 +361,30 @@
   }
   .exp-meta {}
   .exp-company {
-    font-family: var(--font-pixel);
-    font-size: 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
     color: var(--px-yellow);
     line-height: 1.9;
     margin-bottom: 0.5rem;
+    letter-spacing: 1px;
   }
   .exp-date {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 11px;
     color: rgba(255,255,255,0.4);
   }
   .exp-role {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--px-green);
     margin-bottom: 0.75rem;
   }
   .exp-bullets { list-style: none; padding: 0; }
   .exp-bullets li {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
     color: rgba(255,255,255,0.65);
-    line-height: 1.75;
+    line-height: 1.8;
     padding: 0.3rem 0 0.3rem 1.25rem;
     position: relative;
   }
@@ -379,7 +392,7 @@
     content: '▸';
     position: absolute; left: 0;
     color: var(--px-cyan);
-    font-size: 10px;
+    font-size: 11px;
     top: 6px;
   }
   .exp-pill {
@@ -486,20 +499,19 @@
   .tool-pill {
     background: var(--dark);
     color: #fff;
-    padding: 1rem 1.25rem;
+    padding: 0.9rem 1.25rem;
     display: flex;
     align-items: center;
     gap: 10px;
     font-family: var(--font-mono);
     font-size: 12px;
-    border: 2px solid var(--dark);
+    border: 1.5px solid var(--dark);
     transition: transform 0.1s, background 0.1s, color 0.1s;
     cursor: default;
   }
   .tool-pill:hover {
-    background: #fff;
-    color: var(--dark);
-    transform: translate(-2px, -2px);
+    background: var(--dark);
+    color: #fff;
   }
   .tool-dot {
     width: 8px; height: 8px;
@@ -572,7 +584,7 @@
   }
   .project-card {
     background: #fff;
-    border: 2px solid var(--dark);
+    border: 1.5px solid var(--dark);
     padding: 1.75rem;
     position: relative;
     text-decoration: none;
@@ -597,12 +609,13 @@
   .project-card.pc-yellow::after{ background: #F0D080; }
 
   .pc-type {
-    font-family: var(--font-pixel);
-    font-size: 7px;
-    padding: 5px 10px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    padding: 4px 10px;
     display: inline-block;
     margin-bottom: 1.25rem;
     border: 1px solid;
+    letter-spacing: 0.5px;
   }
   .pc-type.t-cyan   { color: #7DDEE8;  border-color: #7DDEE8; }
   .pc-type.t-pink   { color: #F0A0BC;  border-color: #F0A0BC; }
@@ -610,9 +623,10 @@
   .pc-type.t-yellow { color: #F0D080;  border-color: #F0D080; }
 
   .pc-title {
-    font-family: var(--font-pixel);
-    font-size: 9px;
-    line-height: 1.9;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
     margin-bottom: 0.75rem;
     color: var(--dark);
   }
@@ -848,7 +862,7 @@
   <div class="nav-logo">A.CRANMER</div>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#expertise">What I'm Into</a>
+    <a href="#expertise">What I am Into</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
@@ -860,19 +874,18 @@
   <div class="hero-vignette"></div>
   <div class="hero-tag">CIS STUDENT · GSU · CLASS OF 2027</div>
   <h1 class="hero-name">
-    <span class="pink">ASHLEE</span> <span class="yellow">CRANMER</span>
+    <span class="pink">Ashlee</span> <span class="yellow">Cranmer</span>
   </h1>
   <div class="hero-title">DATA · OPERATIONS · LEADERSHIP · TECHNOLOGY</div>
   <p class="hero-sub">
-    Computer Information Systems (Digital Innovation) student at Georgia State University,<br>
-    learning to connect data, operations, design, and technology to solve real problems.
+    Computer Information Systems student at Georgia State University, aiming to connect data, operations, design, and technology to solve real problems.
   </p>
   <div class="hero-badges">
-    <div class="badge b-green">DATA ANALYSIS</div>
-    <div class="badge b-cyan">TECH CONSULTING</div>
-    <div class="badge b-pink">UX DESIGN</div>
-    <div class="badge b-purple">PROJECT MGMT</div>
-    <div class="badge b-yellow">OPERATIONS</div>
+    <div class="badge b-green">Data Analysis</div>
+    <div class="badge b-cyan">IT Strategy</div>
+    <div class="badge b-pink">UX Design</div>
+    <div class="badge b-purple">Project Mgmt</div>
+    <div class="badge b-yellow">Operations</div>
   </div>
 
 
@@ -887,11 +900,11 @@
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a <strong>Computer Information Systems student</strong> at Georgia State University with a focus on Digital Innovation — driven by a simple idea: that the right data, in the right hands, can fix almost anything.</p>
+      <p>I am a <strong>Computer Information Systems student</strong> at Georgia State University with a focus on Digital Innovation — driven by a simple idea: that the right data, in the right hands, can drive better decisions.</p>
       <br>
-      <p>Operations, leadership, and technology are where I live. I've spent <strong>6+ years leading teams</strong>, solving process problems, and figuring out how to make things run better — and now I'm bringing that same instinct into <strong>data analysis, tech consulting, UX design, and project management</strong>. I'm drawn to questions like: <em>what does this data actually mean?</em> and <em>how can this system be improved?</em></p>
+      <p>Operations, leadership, and technology are where I live. I've spent <strong>6+ years leading teams</strong>, solving process problems, and figuring out how to make things run better — and now I am bringing that same instinct into <strong>data analysis, IT strategy, UX design, and project management</strong>. I am drawn to questions like: <em>what does this data actually mean?</em> and <em>how can this system be improved?</em></p>
       <br>
-      <p>I think naturally in terms of <strong>patterns, processes, and people</strong> — and I'm most comfortable when I'm leading others toward a solution. I'm curious by nature, energized by complexity, and genuinely excited to take everything I've built so far into the workforce.</p>
+      <p>I think naturally in terms of <strong>patterns, processes, and people</strong> — and I am most comfortable when I am leading others toward a solution. I am curious by nature, energized by complexity, and genuinely excited to take everything I've learned into the workforce.</p>
     </div>
     <div class="edu-card">
       <div class="edu-label">EDUCATION</div>
@@ -921,29 +934,29 @@
 
     <div class="exp-card card-tech">
       <span class="exp-card-icon">⚙️</span>
-      <div class="exp-card-title">TECH CONSULTING</div>
-      <div class="exp-card-body">Fascinated by how organizations adopt — and struggle with — technology. I'm interested in helping people cut through complexity and make smarter tech decisions.</div>
+      <div class="exp-card-title">IT STRATEGY</div>
+      <div class="exp-card-body">Fascinated by how organizations adopt — and struggle with — technology. I am interested in helping people cut through complexity and make smarter tech decisions.</div>
       <div class="exp-tag">IT SOLUTIONS · SYSTEMS · STRATEGY</div>
     </div>
 
     <div class="exp-card card-pm">
       <span class="exp-card-icon">📈</span>
       <div class="exp-card-title">DATA-BASED OPERATIONAL THINKING</div>
-      <div class="exp-card-body">I approach operational problems with a data-first mindset — asking what the numbers actually tell us, where processes break down, and how evidence-backed decisions lead to better outcomes. I'm drawn to the intersection of data and real-world operations.</div>
+      <div class="exp-card-body">I approach operational problems with a data-first mindset — asking what the numbers actually tell us, where processes break down, and how evidence-based decisions lead to better outcomes. I am drawn to the intersection of data and real-world operations.</div>
       <div class="exp-tag">PROCESS IMPROVEMENT · WORKFLOW DESIGN · ANALYTICS</div>
     </div>
 
     <div class="exp-card card-ux">
       <span class="exp-card-icon">🖥️</span>
       <div class="exp-card-title">UX DESIGN</div>
-      <div class="exp-card-body">Exploring how design shapes the way people interact with systems. I'm curious about the gap between how things work and how they feel — and how good design closes it.</div>
+      <div class="exp-card-body">Exploring how design shapes the way people interact with systems. I am curious about the gap between how systems work and how they feel to use — and how good design closes it.</div>
       <div class="exp-tag">WORKFLOWS · DESIGN · FIGMA</div>
     </div>
 
     <div class="exp-card card-purple">
       <span class="exp-card-icon">📋</span>
       <div class="exp-card-title">PROJECT MANAGEMENT</div>
-      <div class="exp-card-body">From collaborating across universities to leading restaurant operations for 75+ employees — I've built real project management experience by doing it, not just studying it. I'm drawn to the challenge of keeping people, timelines, and outcomes aligned.</div>
+      <div class="exp-card-body">From collaborating across universities to leading restaurant operations for 75+ employees — I've built real project management experience by doing it, not just studying it. I am drawn to the challenge of keeping people, timelines, and outcomes aligned.</div>
       <div class="exp-tag">PROCESS IMPROVEMENT · AGILE · COORDINATION</div>
     </div>
 
@@ -964,13 +977,13 @@
   </div>
 
   <p style="font-family:var(--font-body);font-size:15px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.4);line-height:1.8;max-width:560px;margin:0 auto 0.5rem;text-align:center;">"From taking orders to giving them — 6 years of building leadership, operations, and data skills one role at a time."</p>
-  <div style="font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,0.2);text-align:center;margin-bottom:2.5rem;letter-spacing:0.5px;">▸ Click any role to learn more</div>
+  <div style="font-family:var(--font-mono);font-size:12px;color:rgba(255,255,255,0.4);text-align:center;margin-bottom:2.5rem;letter-spacing:0.5px;">▸ Click any role to learn more</div>
 
   <div style="position:relative;max-width:680px;margin:0 auto;">
     <div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(255,255,255,0.08);transform:translateX(-50%);"></div>
 
     <!-- CHAPTER: NOW -->
-    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · NOW</div>
+    <div style="font-family:var(--font-pixel);font-size:9px;color:rgba(255,255,255,0.75);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · NOW</div>
 
     <!-- INTERNSHIP — RIGHT -->
     <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
@@ -979,9 +992,9 @@
         <div style="width:16px;height:16px;border-radius:50%;background:var(--px-green);border:3px solid var(--dark);"></div>
       </div>
       <div style="padding-left:1.25rem;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2026 – Apr 2026 · 4 mos</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">NORFOLK SOUTHERN</div>
-        <div class="exp-role" onclick="toggleRole('internship')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">Jan 2026 – Apr 2026 · 4 mos</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">NORFOLK SOUTHERN</div>
+        <div class="exp-role" onclick="toggleRole('internship')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           Business Optimization Intern <span style="font-weight:300;font-size:13px;color:rgba(255,255,255,0.35);">· Business/Data Analyst</span>
           <span id="internship-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
         </div>
@@ -1000,11 +1013,11 @@
     <!-- SUMMIT COFFEE — LEFT -->
     <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
       <div style="padding-right:1.25rem;text-align:right;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">2025 – Present</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">SUMMIT COFFEE</div>
-        <div class="exp-role" onclick="toggleRole('summit')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">2025 – Present</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">SUMMIT COFFEE</div>
+        <div class="exp-role" onclick="toggleRole('summit')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           <span id="summit-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">◂</span>
-          Asst. Manager
+          Barista · Assistant Manager
         </div>
         <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
         <div id="summit-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;text-align:left;">
@@ -1021,7 +1034,7 @@
     </div>
 
     <!-- CHAPTER: CHICK-FIL-A -->
-    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · CHICK-FIL-A · 5 YRS 9 MOS</div>
+    <div style="font-family:var(--font-pixel);font-size:9px;color:rgba(255,255,255,0.75);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · CHICK-FIL-A · 5 YRS 9 MOS</div>
 
     <!-- DRIVE-THRU — RIGHT -->
     <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
@@ -1030,9 +1043,9 @@
         <div style="width:16px;height:16px;border-radius:50%;background:var(--px-green);border:3px solid var(--dark);"></div>
       </div>
       <div style="padding-left:1.25rem;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Feb 2024 – Feb 2025 · 1 yr 1 mo</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
-        <div class="exp-role" onclick="toggleRole('cfa-dtc')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">Feb 2024 – Feb 2025 · 1 yr 1 mo</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-dtc')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           Drive-Thru Coordinator
           <span id="cfa-dtc-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
         </div>
@@ -1051,11 +1064,11 @@
     <!-- CULTIVATE — LEFT -->
     <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
       <div style="padding-right:1.25rem;text-align:right;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2023 – Feb 2024 · 1 yr 2 mos</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
-        <div class="exp-role" onclick="toggleRole('cfa-cli')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">Jan 2023 – Feb 2024 · 1 yr 2 mos</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-cli')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           <span id="cfa-cli-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">◂</span>
-          Cultivate Intern
+          Cultivate Leadership Intern
         </div>
         <div style="height:2px;background:rgba(255,255,255,0.06);margin:6px 0 0;"></div>
         <div id="cfa-cli-content" style="overflow:hidden;max-height:0;transition:max-height 0.4s ease,opacity 0.3s ease;opacity:0;text-align:left;">
@@ -1079,9 +1092,9 @@
         <div style="width:16px;height:16px;border-radius:50%;background:var(--px-cyan);border:3px solid var(--dark);"></div>
       </div>
       <div style="padding-left:1.25rem;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2021 – Jan 2023 · 2 yrs 1 mo</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
-        <div class="exp-role" onclick="toggleRole('cfa-sl')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">Jan 2021 – Jan 2023 · 2 yrs 1 mo</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-sl')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           Shift Leader
           <span id="cfa-sl-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
         </div>
@@ -1096,14 +1109,14 @@
     </div>
 
     <!-- CHAPTER: WHERE IT STARTED -->
-    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · WHERE IT STARTED</div>
+    <div style="font-family:var(--font-pixel);font-size:9px;color:rgba(255,255,255,0.75);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · WHERE IT STARTED</div>
 
     <!-- CERTIFIED TRAINER — LEFT -->
     <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;margin-bottom:1.75rem;">
       <div style="padding-right:1.25rem;text-align:right;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jan 2020 – Jan 2021 · 1 yr 1 mo</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
-        <div class="exp-role" onclick="toggleRole('cfa-ct')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">Jan 2020 – Jan 2021 · 1 yr 1 mo</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-ct')" style="cursor:pointer;display:flex;align-items:center;justify-content:flex-end;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           <span id="cfa-ct-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">◂</span>
           Certified Trainer
         </div>
@@ -1127,9 +1140,9 @@
         <div style="width:16px;height:16px;border-radius:50%;background:var(--px-pink);border:3px solid var(--dark);"></div>
       </div>
       <div style="padding-left:1.25rem;">
-        <div style="font-family:var(--font-mono);font-size:9px;color:rgba(255,255,255,0.3);margin-bottom:3px;">Jun 2019 – Jan 2020 · 8 mos</div>
-        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;">CHICK-FIL-A</div>
-        <div class="exp-role" onclick="toggleRole('cfa-tm')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:15px;">
+        <div style="font-family:var(--font-mono);font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:3px;">Jun 2019 – Jan 2020 · 8 mos</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-yellow);margin-bottom:5px;line-height:1.8;letter-spacing:1px;">CHICK-FIL-A</div>
+        <div class="exp-role" onclick="toggleRole('cfa-tm')" style="cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;margin-bottom:0;font-size:16px;">
           Team Member
           <span id="cfa-tm-arrow" style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);transition:transform 0.2s;flex-shrink:0;">▸</span>
         </div>
@@ -1143,40 +1156,40 @@
     </div>
 
     <!-- CHAPTER: ALWAYS LEARNING -->
-    <div style="font-family:var(--font-pixel);font-size:7px;color:rgba(255,255,255,0.5);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · ALWAYS LEARNING</div>
+    <div style="font-family:var(--font-pixel);font-size:9px;color:rgba(255,255,255,0.75);letter-spacing:3px;text-align:center;margin-bottom:1.5rem;">· · · ALWAYS LEARNING</div>
 
   </div>
 
   <!-- COURSEWORK CARDS -->
-  <div style="max-width:680px;margin:0 auto;padding-top:0.5rem;">
-    <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-yellow);letter-spacing:2px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;">
+  <div style="max-width:800px;margin:0 auto;padding-top:0.5rem;">
+    <div style="font-family:var(--font-mono);font-size:10px;color:var(--px-yellow);letter-spacing:2px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;">
       GSU · RELEVANT COURSEWORK
       <span style="flex:1;height:1px;background:rgba(255,255,255,0.08);display:block;"></span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem;">
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-green);">
-        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-green);margin-bottom:6px;line-height:1.8;">MANAGING WITH AI</div>
-        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Information systems, agile methods, AI-driven project automation, risk assessment.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1.25rem;position:relative;border-left:3px solid var(--px-green);">
+        <div style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--px-green);margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Managing with AI</div>
+        <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;">Information systems, agile methods, AI-driven project automation, risk assessment.</div>
       </div>
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-cyan);">
-        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-cyan);margin-bottom:6px;line-height:1.8;">INTRO TO CIS</div>
-        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Data analysis in Excel: pivot charts, pivot tables, VLOOKUP, XLOOKUP, and data visualization.</div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1.25rem;position:relative;border-left:3px solid var(--px-cyan);">
+        <div style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--px-cyan);margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Intro to CIS</div>
+        <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;">Data analysis in Excel: pivot charts, pivot tables, VLOOKUP, XLOOKUP, and data visualization.</div>
       </div>
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-pink);">
-        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-pink);margin-bottom:6px;line-height:1.8;">INTRO TO PROGRAMMING</div>
-        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Problem analysis, program design, debugging, and code optimization in Python.</div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1.25rem;position:relative;border-left:3px solid var(--px-pink);">
+        <div style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--px-pink);margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Intro to Programming</div>
+        <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;">Problem analysis, program design, debugging, and code optimization in Python.</div>
       </div>
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-yellow);">
-        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-yellow);margin-bottom:6px;line-height:1.8;">BUSINESS COMMUNICATION</div>
-        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Professional written, oral, and interpersonal communication; persuasion and career strategy.</div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1.25rem;position:relative;border-left:3px solid var(--px-yellow);">
+        <div style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--px-yellow);margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Business Communication</div>
+        <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;">Professional written, oral, and interpersonal communication; persuasion and career strategy.</div>
       </div>
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-purple);">
-        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-purple);margin-bottom:6px;line-height:1.8;">BUSINESS ANALYSIS MGMT</div>
-        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Decision modeling: simulation, optimization, forecasting, and Monte Carlo analysis.</div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1.25rem;position:relative;border-left:3px solid var(--px-purple);">
+        <div style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--px-purple);margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Business Analysis Mgmt</div>
+        <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;">Decision modeling: simulation, optimization, forecasting, and Monte Carlo analysis.</div>
       </div>
-      <div style="border:1px solid rgba(255,255,255,0.1);padding:1rem;position:relative;border-left:3px solid var(--px-green);">
-        <div style="font-family:var(--font-pixel);font-size:7px;color:var(--px-green);margin-bottom:6px;line-height:1.8;">MANAGING PEOPLE IN ORGS</div>
-        <div style="font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;">Leadership, workplace dynamics, and organizational behavior self-assessment.</div>
+      <div style="border:1px solid rgba(255,255,255,0.1);padding:1.25rem;position:relative;border-left:3px solid var(--px-green);">
+        <div style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--px-green);margin-bottom:6px;letter-spacing:0.5px;text-transform:uppercase;">Managing People in Orgs</div>
+        <div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;">Leadership, workplace dynamics, and organizational behavior self-assessment.</div>
       </div>
     </div>
   </div>
@@ -1200,7 +1213,7 @@
   <div class="projects-grid">
 
     <a class="project-card pc-cyan" href="dignified-days.html">
-      <div class="pc-type t-cyan">TECH CONSULTING · DATA</div>
+      <div class="pc-type t-cyan">IT STRATEGY · DATA</div>
       <div class="pc-title">DIGNIFIED DAYS<br>BUSINESS CASE</div>
       <div class="pc-desc">A full consulting business case evaluating three strategic alternatives — status quo, outsourcing, and AI integration — to reduce CSR call volume by 25% at a home hospice equipment provider.</div>
       <div class="pc-tags">
@@ -1266,24 +1279,24 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;align-items:stretch;">
 
-    <div style="background:#fff;border:2px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+    <div style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
       <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-green);z-index:-1;"></div>
-      <div style="font-family:var(--font-pixel);font-size:8px;color:var(--px-green);margin-bottom:0.75rem;">GEORGIA STATE UNIVERSITY</div>
-      <div style="font-family:var(--font-pixel);font-size:11px;line-height:2;margin-bottom:0.75rem;">INTERNATIONAL VIRTUAL<br>EXCHANGE BADGE</div>
-      <div style="font-family:var(--font-mono);font-size:12px;color:#999;">Issued Mar 2026</div>
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-green);margin-bottom:0.75rem;letter-spacing:1px;">GEORGIA STATE UNIVERSITY</div>
+      <div style="font-family:var(--font-body);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">International Virtual<br>Exchange Badge</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Mar 2026</div>
     </div>
 
-    <div style="background:#fff;border:2px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+    <div style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
       <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-yellow);z-index:-1;"></div>
-      <div style="font-family:var(--font-pixel);font-size:8px;color:#888;margin-bottom:0.75rem;">LINKEDIN</div>
-      <div style="font-family:var(--font-pixel);font-size:11px;line-height:2;margin-bottom:0.75rem;">LEARNING SQL<br>PROGRAMMING</div>
-      <div style="font-family:var(--font-mono);font-size:12px;color:#999;">Issued Nov 2025</div>
+      <div style="font-family:var(--font-mono);font-size:9px;color:#888;margin-bottom:0.75rem;letter-spacing:1px;">LINKEDIN</div>
+      <div style="font-family:var(--font-body);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">Learning SQL<br>Programming</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Nov 2025</div>
     </div>
 
-    <div style="background:#fff;border:2px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;opacity:0.5;cursor:default;">
+    <div style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;opacity:0.5;cursor:default;">
       <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-pink);z-index:-1;"></div>
-      <div style="font-family:var(--font-pixel);font-size:8px;color:var(--px-pink);margin-bottom:0.75rem;">COMING SOON</div>
-      <div style="font-family:var(--font-pixel);font-size:11px;line-height:2;margin-bottom:0.75rem;">MORE ON<br>THE WAY</div>
+      <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-pink);margin-bottom:0.75rem;letter-spacing:1px;">COMING SOON</div>
+      <div style="font-family:var(--font-body);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">More on<br>the way</div>
       <div style="font-size:12px;font-weight:300;color:#777;line-height:1.6;">More certifications in progress — stay tuned for updates.</div>
     </div>
 
@@ -1373,7 +1386,7 @@
     'EXCEL','POWER BI','PYTHON','SQL','TABLEAU','DATA CLEANING',
     'DATA VISUALIZATION','PIVOT TABLES','VLOOKUP / XLOOKUP','AGILE',
     'PROCESS OPTIMIZATION','WORKFLOW DESIGN','PROJECT MANAGEMENT',
-    'IT SOLUTION DESIGN','TECH CONSULTING','UX THINKING',
+    'IT SOLUTION DESIGN','IT STRATEGY','UX THINKING',
     'MICROSOFT OFFICE','DIGITAL TRANSFORMATION','LEADERSHIP','OPERATIONS'
   ];
   const ticker = document.getElementById('ticker');
