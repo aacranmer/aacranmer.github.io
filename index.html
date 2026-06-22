@@ -149,9 +149,9 @@
     border: 1.5px solid;
     letter-spacing: 0.5px;
     cursor: default;
-    transition: transform 0.1s;
+    transition: transform 0.2s ease;
   }
-  .badge:hover { transform: translate(-2px, -2px); }
+  .badge:hover { transform: translate(-1px, -1px); }
   .b-pink   { color: var(--px-pink);   border-color: var(--px-pink); }
   .b-cyan   { color: var(--px-cyan);   border-color: var(--px-cyan); }
   .b-green  { color: var(--px-green);  border-color: var(--px-green); }
@@ -271,7 +271,7 @@
     border: 1.5px solid var(--dark);
     padding: 1.75rem;
     position: relative;
-    transition: transform 0.15s;
+    transition: transform 0.2s ease;
   }
   .exp-card::after {
     content: '';
@@ -279,9 +279,10 @@
     bottom: -6px; right: -6px;
     width: 100%; height: 100%;
     z-index: -1;
+    transition: bottom 0.2s ease, right 0.2s ease;
   }
-  .exp-card:hover { transform: translate(-3px, -3px); }
-  .exp-card:hover::after { bottom: -9px; right: -9px; }
+  .exp-card:hover { transform: translate(-2px, -2px); }
+  .exp-card:hover::after { bottom: -8px; right: -8px; }
   .exp-card.card-ux  { border-color: #F0A0BC; }
   .exp-card.card-ux::after  { background: #F0A0BC; }
   .exp-card.card-tech { border-color: #7DDEE8; }
@@ -601,8 +602,7 @@
     text-decoration: none;
     color: inherit;
     display: block;
-    transition: transform 0.15s;
-    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
   }
   .project-card::after {
     content: '';
@@ -612,8 +612,8 @@
     z-index: -1;
     transition: bottom 0.15s, right 0.15s;
   }
-  .project-card:hover { transform: translate(-4px, -4px); }
-  .project-card:hover::after { bottom: -10px; right: -10px; }
+  .project-card:hover { transform: translate(-6px, -6px); box-shadow: 6px 6px 0 var(--dark); }
+  .project-card:hover::after { bottom: -14px; right: -14px; }
   .project-card.pc-cyan::after  { background: #7DDEE8; }
   .project-card.pc-pink::after  { background: #F0A0BC; }
   .project-card.pc-green::after { background: #C0A0E8; }
@@ -1283,6 +1283,27 @@
 </section>
 
 <!-- CERTIFICATIONS -->
+<style>
+  .cert-card {
+    background:#fff;
+    border:1.5px solid var(--dark);
+    padding:2.25rem 1.5rem;
+    position:relative;
+    min-height:160px;
+    transition: transform 0.2s ease;
+    z-index: 1;
+  }
+  .cert-wrapper {
+    position: relative;
+  }
+  .cert-shadow {
+    position:absolute;
+    bottom:-5px; right:-5px;
+    width:100%; height:100%;
+    z-index: 0;
+  }
+  .cert-card:hover { transform: translate(-2px, -2px); }
+</style>
 <section class="tools-section">
   <div class="section-header">
     <div class="section-num">06</div>
@@ -1291,18 +1312,22 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;align-items:stretch;">
 
-    <div style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
-      <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-green);z-index:-1;"></div>
-      <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-green);margin-bottom:0.75rem;letter-spacing:1px;">GEORGIA STATE UNIVERSITY</div>
-      <div style="font-family:var(--font-pixel);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">International Virtual<br>Exchange Badge</div>
-      <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Mar 2026</div>
+    <div class="cert-wrapper">
+      <div class="cert-shadow" style="background:var(--px-green);"></div>
+      <div class="cert-card" style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--px-green);margin-bottom:0.75rem;letter-spacing:1px;">GEORGIA STATE UNIVERSITY</div>
+        <div style="font-family:var(--font-pixel);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">International Virtual<br>Exchange Badge</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Mar 2026</div>
+      </div>
     </div>
 
-    <div style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
-      <div style="position:absolute;bottom:-5px;right:-5px;width:100%;height:100%;background:var(--px-yellow);z-index:-1;"></div>
-      <div style="font-family:var(--font-mono);font-size:9px;color:#888;margin-bottom:0.75rem;letter-spacing:1px;">LINKEDIN</div>
-      <div style="font-family:var(--font-pixel);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">Learning SQL<br>Programming</div>
-      <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Nov 2025</div>
+    <div class="cert-wrapper">
+      <div class="cert-shadow" style="background:var(--px-yellow);"></div>
+      <div class="cert-card" style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:#888;margin-bottom:0.75rem;letter-spacing:1px;">LINKEDIN</div>
+        <div style="font-family:var(--font-pixel);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">Learning SQL<br>Programming</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Nov 2025</div>
+      </div>
     </div>
 
     <div style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;opacity:0.5;cursor:default;">
