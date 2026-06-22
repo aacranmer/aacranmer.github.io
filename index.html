@@ -60,6 +60,17 @@
     transition: opacity 0.15s, color 0.15s;
   }
   .nav-links a:hover { opacity: 1; color: var(--px-cyan); }
+  .nav-resume {
+    border: 1px solid var(--px-cyan);
+    color: var(--px-cyan) !important;
+    padding: 5px 14px;
+    opacity: 1 !important;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-resume:hover {
+    background: var(--px-cyan);
+    color: var(--dark) !important;
+  }
 
 
   /* ── HERO ── */
@@ -866,6 +877,7 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <a href="#" class="nav-resume" onclick="return false;">Resume ↓</a>
   </div>
 </nav>
 
