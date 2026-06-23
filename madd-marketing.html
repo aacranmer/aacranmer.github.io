@@ -26,12 +26,12 @@
   .hero-title span { color:var(--px-yellow); }
   .hero-sub { font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); max-width:620px; line-height:1.85; margin-bottom:2rem; position:relative; }
   .hero-pills { display:flex; flex-wrap:wrap; gap:0.75rem; position:relative; }
-  .hero-pill { font-family:var(--font-pixel); font-size:6px; padding:6px 12px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.55); letter-spacing:1px; }
+  .hero-pill { font-family:var(--font-pixel); font-size:11px; padding:8px 16px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.75); letter-spacing:1px; }
   .hero-pill span { color:var(--px-yellow); margin-right:6px; }
 
   .content { max-width:860px; margin:0 auto; padding:3rem 2rem; }
-  .cs-label { font-family:var(--font-mono); font-size:13px; color:var(--px-yellow); letter-spacing:2px; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
-  .cs-label::after { content:''; flex:1; height:1px; background:rgba(240,208,128,0.2); }
+  .cs-label { font-family:var(--font-mono); font-size:13px; color:#A07010; letter-spacing:2px; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
+  .cs-label::after { content:''; flex:1; height:1px; background:rgba(160,112,16,0.25); }
   .cs-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
   .cs-body strong { font-weight:500; color:var(--dark); }
   .px-divider { height:3px; background:repeating-linear-gradient(90deg,var(--dark) 0,var(--dark) 8px,transparent 8px,transparent 16px); opacity:0.1; margin:2.5rem 0; }
@@ -52,10 +52,10 @@
   .swot-card.sw-w { background:rgba(240,160,188,0.06); border-color:var(--px-pink); }
   .swot-card.sw-o { background:rgba(125,222,232,0.06); border-color:var(--px-cyan); }
   .swot-card.sw-t { background:rgba(240,208,128,0.06); border-color:var(--px-yellow); }
-  .swot-label { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.6rem; }
-  .sw-s .swot-label{color:var(--px-green);} .sw-w .swot-label{color:var(--px-pink);} .sw-o .swot-label{color:var(--px-cyan);} .sw-t .swot-label{color:var(--px-yellow);}
+  .swot-label { font-family:var(--font-pixel); font-size:10px; margin-bottom:0.6rem; }
+  .sw-s .swot-label{color:#2D6B24;} .sw-w .swot-label{color:#9B2D4F;} .sw-o .swot-label{color:#1A7A8A;} .sw-t .swot-label{color:#8A6410;}
   .swot-list { list-style:none; padding:0; }
-  .swot-list li { font-size:13px; font-weight:300; color:#444; line-height:1.7; padding:0.2rem 0 0.2rem 1rem; position:relative; }
+  .swot-list li { font-size:15px; font-weight:300; color:#444; line-height:1.7; padding:0.2rem 0 0.2rem 1rem; position:relative; }
   .swot-list li::before { content:'▸'; position:absolute; left:0; font-size:9px; top:5px; }
   .sw-s li::before{color:var(--px-green);} .sw-w li::before{color:var(--px-pink);} .sw-o li::before{color:var(--px-cyan);} .sw-t li::before{color:var(--px-yellow);}
 
@@ -65,39 +65,39 @@
   .p-card::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
   .p-card:hover { transform:translate(-2px,-2px); }
   .p-card.pc-prod::after{background:var(--px-cyan);} .p-card.pc-price::after{background:var(--px-green);} .p-card.pc-place::after{background:var(--px-yellow);} .p-card.pc-promo::after{background:var(--px-pink);}
-  .p-label { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.5rem; }
-  .pc-prod .p-label{color:var(--px-cyan);} .pc-price .p-label{color:var(--px-green);} .pc-place .p-label{color:var(--px-yellow);} .pc-promo .p-label{color:var(--px-pink);}
-  .p-title { font-family:var(--font-pixel); font-size:8px; margin-bottom:0.5rem; line-height:1.8; }
-  .p-body { font-size:13px; font-weight:300; color:#666; line-height:1.65; }
+  .p-label { font-family:var(--font-pixel); font-size:10px; margin-bottom:0.5rem; }
+  .pc-prod .p-label{color:#1A7A8A;} .pc-price .p-label{color:#2D6B24;} .pc-place .p-label{color:#8A6410;} .pc-promo .p-label{color:#9B2D4F;}
+  .p-title { font-family:var(--font-pixel); font-size:13px; margin-bottom:0.5rem; line-height:1.8; }
+  .p-body { font-size:15px; font-weight:300; color:#666; line-height:1.65; }
 
   /* RECOMMENDATIONS */
   .rec-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
   @media(max-width:560px){ .rec-grid{grid-template-columns:1fr;} }
   .rec-card { background:var(--dark); border:2px solid; padding:1.75rem; }
   .rec-card.rc-d{border-color:var(--px-cyan);} .rec-card.rc-t{border-color:var(--px-yellow);}
-  .rc-label { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.75rem; }
+  .rc-label { font-family:var(--font-pixel); font-size:10px; margin-bottom:0.75rem; }
   .rc-d .rc-label{color:var(--px-cyan);} .rc-t .rc-label{color:var(--px-yellow);}
-  .rc-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
+  .rc-body { font-size:15px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
   .rc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:0.75rem; }
   .rc-tag { font-family:var(--font-mono); font-size:10px; padding:3px 8px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.5); }
 
   /* BUDGET & ROADMAP */
   .budget-strip { background:var(--dark); border-left:4px solid var(--px-green); padding:1.5rem 2rem; margin:1.5rem 0; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
   .bs-num { font-family:var(--font-pixel); font-size:20px; color:var(--px-yellow); flex-shrink:0; line-height:1.4; }
-  .bs-desc { font-size:14px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.7; }
+  .bs-desc { font-size:15px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.7; }
   .phase-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0; }
   @media(max-width:560px){ .phase-grid{grid-template-columns:1fr;} }
   .phase-card { background:#fff; border:2px solid var(--dark); padding:1.5rem; position:relative; }
   .phase-card::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
   .phase-card:nth-child(1)::after{background:var(--px-cyan);} .phase-card:nth-child(2)::after{background:var(--px-yellow);} .phase-card:nth-child(3)::after{background:var(--px-pink);}
-  .ph-label { font-family:var(--font-pixel); font-size:6px; color:#aaa; margin-bottom:6px; }
-  .ph-title { font-family:var(--font-pixel); font-size:8px; margin-bottom:0.6rem; line-height:1.8; }
-  .ph-body { font-size:13px; font-weight:300; color:#666; line-height:1.65; }
+  .ph-label { font-family:var(--font-pixel); font-size:10px; color:#aaa; margin-bottom:6px; }
+  .ph-title { font-family:var(--font-pixel); font-size:13px; margin-bottom:0.6rem; line-height:1.8; }
+  .ph-body { font-size:15px; font-weight:300; color:#666; line-height:1.65; }
 
   /* REFLECTION */
   .reflection { background:#fff; border:2px solid var(--dark); padding:2rem; position:relative; }
   .reflection::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; background:var(--px-yellow); z-index:-1; }
-  .ref-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-yellow); background:var(--dark); display:inline-block; padding:5px 10px; margin-bottom:1rem; }
+  .ref-label { font-family:var(--font-pixel); font-size:11px; color:var(--px-yellow); background:var(--dark); display:inline-block; padding:5px 10px; margin-bottom:1rem; }
   .ref-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
   .ref-body strong { font-weight:500; color:var(--dark); }
 
@@ -109,16 +109,16 @@
 </head>
 <body>
 <nav>
-  <a class="nav-back" href="index.html">← BACK TO PORTFOLIO</a>
+  <a class="nav-back" href="index.html#projects">← BACK TO PORTFOLIO</a>
   <div class="nav-logo">AC.EXE</div>
 </nav>
 
 <div class="hero">
-  <div class="hero-eyebrow">MARKETING PLAN · TEAM PROJECT · MARKETING COURSE</div>
+  <div class="hero-eyebrow">MARKETING PLAN · TEAM PROJECT · MARKETING MANAGEMENT</div>
   <h1 class="hero-title">DIAZ BROTHERS<br><span>TACOS & MARGARITAS</span>:<br>ANNUAL MARKETING PLAN</h1>
   <p class="hero-sub">A full marketing makeover for a real local restaurant in Norcross, GA: SWOT analysis, 4 P's audit, digital and traditional recommendations, and a phased 12-month roadmap on a $600–$1,000/month budget.</p>
   <div class="hero-pills">
-    <div class="hero-pill"><span>COURSE</span>Marketing · Georgia State University</div>
+    <div class="hero-pill"><span>COURSE</span>Marketing Management · Georgia State University</div>
     <div class="hero-pill"><span>TEAM</span>MADD Marketing, Inc. · Group #3</div>
     <div class="hero-pill"><span>ROLE</span>Group Leader</div>
     <div class="hero-pill"><span>BUDGET</span>$600–$1,000/month</div>
@@ -216,6 +216,6 @@
   </div>
 
 </div>
-<div class="back-wrap"><a class="back-btn" href="index.html">← BACK TO PORTFOLIO</a></div>
+<div class="back-wrap"><a class="back-btn" href="index.html#projects">← BACK TO PORTFOLIO</a></div>
 </body>
 </html>
