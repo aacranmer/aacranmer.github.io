@@ -50,7 +50,7 @@
   .problem-half::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
   .problem-half.ph-left::after { background:var(--px-pink); }
   .problem-half.ph-right::after { background:var(--px-cyan); }
-  .ph-label { font-family:var(--font-pixel); font-size:6px; margin-bottom:0.75rem; }
+  .ph-label { font-family:var(--font-pixel); font-size:10px; font-weight:500; letter-spacing:1.5px; margin-bottom:0.75rem; }
   .ph-left .ph-label { color:var(--px-pink); }
   .ph-right .ph-label { color:var(--px-cyan); }
   .ph-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
@@ -58,7 +58,7 @@
 
   /* MOV BANNER */
   .mov-banner { background:var(--dark); border-left:4px solid var(--px-yellow); padding:1.5rem 2rem; margin:1.5rem 0; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
-  .mov-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-yellow); flex-shrink:0; }
+  .mov-label { font-family:var(--font-pixel); font-size:10px; color:var(--px-yellow); flex-shrink:0; }
   .mov-text { font-family:var(--font-pixel); font-size:clamp(8px,1.3vw,10px); color:#fff; line-height:2.2; }
 
   /* STATS */
@@ -69,7 +69,7 @@
   .stat-box.sb-cyan::after { background:var(--px-cyan); }
   .stat-box.sb-green::after { background:var(--px-green); }
   .stat-box.sb-pink::after { background:var(--px-pink); }
-  .sb-label { font-family:var(--font-pixel); font-size:6px; color:#aaa; margin-bottom:6px; }
+  .sb-label { font-family:var(--font-pixel); font-size:10px; color:#aaa; margin-bottom:6px; }
   .sb-num { font-family:var(--font-pixel); font-size:22px; color:var(--dark); line-height:1; margin-bottom:4px; }
   .sb-desc { font-size:15px; font-weight:300; color:#777; }
 
@@ -81,8 +81,8 @@
   .ai-card:nth-child(1)::after { background:var(--px-pink); }
   .ai-card:nth-child(2)::after { background:var(--px-yellow); }
   .ai-card:nth-child(3)::after { background:var(--px-cyan); }
-  .ai-tag { font-family:var(--font-pixel); font-size:6px; color:#aaa; margin-bottom:6px; }
-  .ai-label { font-family:var(--font-pixel); font-size:8px; line-height:1.9; margin-bottom:6px; }
+  .ai-tag { font-family:var(--font-pixel); font-size:10px; color:#aaa; margin-bottom:6px; }
+  .ai-label { font-family:var(--font-pixel); font-size:13px; line-height:1.9; margin-bottom:6px; }
   .ai-body { font-size:15px; font-weight:300; color:#666; line-height:1.6; }
 
   /* TABLE */
@@ -104,16 +104,16 @@
   /* RISK CARDS */
   .risk-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0; }
   .risk-card { background:#fff; border:2px solid var(--dark); padding:1.25rem; }
-  .risk-title { font-family:var(--font-pixel); font-size:7px; margin-bottom:0.5rem; line-height:1.9; }
+  .risk-title { font-family:var(--font-pixel); font-size:13px; margin-bottom:0.5rem; line-height:1.9; }
   .risk-body { font-size:15px; font-weight:300; color:#666; line-height:1.6; }
-  .risk-level { display:inline-block; font-family:var(--font-pixel); font-size:6px; padding:3px 8px; margin-top:8px; }
+  .risk-level { display:inline-block; font-family:var(--font-pixel); font-size:10px; padding:5px 12px; margin-top:8px; }
   .rl-med { background:var(--px-yellow); color:var(--dark); }
   .rl-low { background:var(--px-green); color:var(--dark); }
 
   /* RECOMMENDATION */
   .rec-box { background:var(--dark); padding:2rem; border:2px solid var(--px-green); position:relative; margin:1.5rem 0; }
   .rec-box::after { content:''; position:absolute; bottom:-7px; right:-7px; width:100%; height:100%; background:var(--px-green); z-index:-1; }
-  .rec-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-green); margin-bottom:0.75rem; }
+  .rec-label { font-family:var(--font-pixel); font-size:10px; color:var(--px-green); margin-bottom:0.75rem; }
   .rec-title { font-family:var(--font-pixel); font-size:clamp(9px,1.3vw,11px); color:#fff; line-height:2; margin-bottom:0.75rem; }
   .rec-body { font-size:15px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.8; }
   .rec-outcomes { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.75rem; margin-top:1.25rem; }
