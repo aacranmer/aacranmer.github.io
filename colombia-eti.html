@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dignified Days Business Case · Ashlee Cranmer</title>
+<title>Colombia Sustainability ETI · Ashlee Cranmer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -13,126 +13,96 @@
   html { scroll-behavior:smooth; }
   body { background:var(--cream); color:var(--dark); font-family:var(--font-body); overflow-x:hidden; }
 
-  /* NAV */
-  nav { position:sticky; top:0; z-index:100; background:var(--dark); border-bottom:4px solid var(--px-cyan); padding:0 2.5rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
-  .nav-back { font-family:var(--font-pixel); font-size:8px; color:var(--px-cyan); text-decoration:none; letter-spacing:1px; transition:opacity 0.15s; }
+  nav { position:sticky; top:0; z-index:100; background:var(--dark); border-bottom:4px solid var(--px-green); padding:0 2.5rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
+  .nav-back { font-family:var(--font-pixel); font-size:8px; color:var(--px-green); text-decoration:none; letter-spacing:1px; transition:opacity 0.15s; }
   .nav-back:hover { opacity:0.7; }
   .nav-logo { font-family:var(--font-pixel); font-size:9px; color:var(--px-yellow); }
 
-  /* HERO */
   .hero { background:var(--dark); padding:4rem 3rem 3rem; position:relative; overflow:hidden; }
-  .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(125,222,232,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(125,222,232,0.05) 1px,transparent 1px); background-size:32px 32px; }
-  .hero-eyebrow { font-family:var(--font-mono); font-size:10px; color:var(--px-cyan); letter-spacing:2px; margin-bottom:1rem; position:relative; }
+  .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(136,216,122,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(136,216,122,0.05) 1px,transparent 1px); background-size:32px 32px; }
+  .hero-eyebrow { font-family:var(--font-mono); font-size:10px; color:var(--px-green); letter-spacing:2px; margin-bottom:1rem; position:relative; }
   .hero-eyebrow::before { content:'> '; color:rgba(255,255,255,0.4); }
   .hero-title { font-family:var(--font-pixel); font-size:clamp(22px,3.5vw,36px); font-weight:500; color:#fff; line-height:1.3; margin-bottom:1rem; position:relative; }
-  .hero-title span { color:var(--px-cyan); }
-  .hero-sub { font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); max-width:600px; line-height:1.85; margin-bottom:2rem; position:relative; }
-
-  /* HERO META PILLS */
-  .hero-pills { display:flex; flex-wrap:wrap; gap:0.75rem; position:relative; margin-bottom:2rem; }
+  .hero-title span { color:var(--px-green); }
+  .hero-sub { font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); max-width:620px; line-height:1.85; margin-bottom:2rem; position:relative; }
+  .hero-pills { display:flex; flex-wrap:wrap; gap:0.75rem; position:relative; }
   .hero-pill { font-family:var(--font-pixel); font-size:11px; padding:8px 16px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.75); letter-spacing:1px; }
   .hero-pill span { color:var(--px-yellow); margin-right:6px; }
 
-  /* CONTENT WRAPPER */
   .content { max-width:860px; margin:0 auto; padding:3rem 2rem; }
-
-  /* SECTION LABEL */
-  .cs-label { font-family:var(--font-mono); font-size:13px; color:#1A8FA8; letter-spacing:2px; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
-  .cs-label::after { content:''; flex:1; height:1px; background:rgba(26,143,168,0.25); }
+  .cs-label { font-family:var(--font-mono); font-size:13px; color:#3A8A2E; letter-spacing:2px; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
+  .cs-label::after { content:''; flex:1; height:1px; background:rgba(58,138,46,0.25); }
   .cs-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
   .cs-body strong { font-weight:500; color:var(--dark); }
   .px-divider { height:3px; background:repeating-linear-gradient(90deg,var(--dark) 0,var(--dark) 8px,transparent 8px,transparent 16px); opacity:0.1; margin:2.5rem 0; }
 
-  /* PROBLEM STATEMENT BOX */
-  .problem-box { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
-  @media(max-width:600px){ .problem-box { grid-template-columns:1fr; } }
-  .problem-half { background:var(--dark); padding:1.75rem; border:2px solid var(--dark); position:relative; }
-  .problem-half::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
-  .problem-half.ph-left::after { background:var(--px-pink); }
-  .problem-half.ph-right::after { background:var(--px-cyan); }
-  .ph-label { font-family:var(--font-pixel); font-size:10px; font-weight:500; letter-spacing:1.5px; margin-bottom:0.75rem; }
-  .ph-left .ph-label { color:var(--px-pink); }
-  .ph-right .ph-label { color:var(--px-cyan); }
-  .ph-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
-  .ph-body strong { color:#fff; font-weight:500; }
-
-  /* MOV BANNER */
-  .mov-banner { background:var(--dark); border-left:4px solid var(--px-yellow); padding:1.5rem 2rem; margin:1.5rem 0; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
-  .mov-label { font-family:var(--font-pixel); font-size:10px; color:var(--px-yellow); flex-shrink:0; }
-  .mov-text { font-family:var(--font-pixel); font-size:clamp(8px,1.3vw,10px); color:#fff; line-height:2.2; }
+  /* CONTEXT SPLIT */
+  .context-split { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.25rem 0; }
+  @media(max-width:600px){ .context-split { grid-template-columns:1fr; } }
+  .ctx-half { padding:1.5rem; border:2px solid var(--dark); background:#fff; position:relative; }
+  .ctx-half::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
+  .ctx-half:nth-child(1)::after { background:var(--px-green); }
+  .ctx-half:nth-child(2)::after { background:var(--px-cyan); }
+  .ctx-label { font-family:var(--font-pixel); font-size:6px; color:#aaa; margin-bottom:8px; }
+  .ctx-body { font-size:13.5px; font-weight:300; color:#555; line-height:1.75; }
+  .ctx-body strong { color:var(--dark); font-weight:500; }
 
   /* STATS */
   .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin:1.5rem 0; }
   .stat-box { background:#fff; border:2px solid var(--dark); padding:1.25rem; position:relative; transition:transform 0.15s; }
   .stat-box::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
   .stat-box:hover { transform:translate(-2px,-2px); }
-  .stat-box.sb-cyan::after { background:var(--px-cyan); }
   .stat-box.sb-green::after { background:var(--px-green); }
+  .stat-box.sb-cyan::after { background:var(--px-cyan); }
+  .stat-box.sb-yellow::after { background:var(--px-yellow); }
   .stat-box.sb-pink::after { background:var(--px-pink); }
-  .sb-label { font-family:var(--font-pixel); font-size:10px; color:#aaa; margin-bottom:6px; }
+  .sb-label { font-family:var(--font-pixel); font-size:6px; color:#aaa; margin-bottom:6px; }
   .sb-num { font-family:var(--font-pixel); font-size:22px; color:var(--dark); line-height:1; margin-bottom:4px; }
   .sb-desc { font-size:15px; font-weight:300; color:#777; }
 
-  /* ANALYSIS INTRO */
-  .analysis-intro { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0; }
-  @media(max-width:600px){ .analysis-intro { grid-template-columns:1fr; } }
-  .ai-card { padding:1.25rem; border:2px solid var(--dark); background:#fff; position:relative; }
-  .ai-card::after { content:''; position:absolute; bottom:-4px; right:-4px; width:100%; height:100%; z-index:-1; }
-  .ai-card:nth-child(1)::after { background:var(--px-pink); }
-  .ai-card:nth-child(2)::after { background:var(--px-yellow); }
-  .ai-card:nth-child(3)::after { background:var(--px-cyan); }
-  .ai-tag { font-family:var(--font-pixel); font-size:10px; color:#aaa; margin-bottom:6px; }
-  .ai-label { font-family:var(--font-pixel); font-size:13px; line-height:1.9; margin-bottom:6px; }
-  .ai-body { font-size:15px; font-weight:300; color:#666; line-height:1.6; }
+  /* ETI CARDS */
+  .eti-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:1.5rem 0; }
+  .eti-card { background:#fff; border:2px solid var(--dark); padding:1.75rem; position:relative; }
+  .eti-card::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; z-index:-1; }
+  .eti-card.ec-green::after { background:var(--px-green); }
+  .eti-card.ec-cyan::after { background:var(--px-cyan); }
+  .eti-icon { font-size:26px; margin-bottom:1rem; display:block; }
+  .eti-title { font-family:var(--font-pixel); font-size:12px; line-height:1.9; margin-bottom:0.75rem; }
+  .eti-body { font-size:13.5px; font-weight:300; color:#555; line-height:1.75; }
 
-  /* TABLE */
-  .alt-table { width:100%; border-collapse:collapse; margin:1.5rem 0; }
-  .alt-table th { font-family:var(--font-pixel); font-size:7px; background:var(--dark); color:#fff; padding:10px 14px; text-align:left; border:1px solid var(--dark); }
-  .alt-table td { font-size:15px; font-weight:300; padding:10px 14px; border:1px solid rgba(0,0,0,0.1); vertical-align:top; line-height:1.6; }
-  .alt-table tr:nth-child(even) td { background:rgba(0,0,0,0.02); }
-  .alt-table tr.highlight td { background:rgba(136,216,122,0.08); border-left:3px solid var(--px-green); }
-  .winner { font-family:var(--font-pixel); font-size:6px; color:var(--px-green); display:block; margin-top:4px; }
+  /* DRIVERS */
+  .driver-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin:1.5rem 0; }
+  .driver-card { background:var(--dark); padding:1.25rem; border:2px solid var(--dark); }
+  .driver-icon { font-size:18px; margin-bottom:0.5rem; }
+  .driver-title { font-family:var(--font-pixel); font-size:7px; color:var(--px-green); line-height:1.9; margin-bottom:0.4rem; }
+  .driver-body { font-size:15px; font-weight:300; color:rgba(255,255,255,0.6); line-height:1.6; }
 
-  /* SCORE BARS */
-  .score-bars { display:flex; flex-direction:column; gap:1rem; margin:1.5rem 0; }
-  .score-row { display:grid; grid-template-columns:120px 1fr 52px; align-items:center; gap:1rem; }
-  .score-name { font-family:var(--font-mono); font-size:13px; color:#555; }
-  .score-track { height:20px; background:rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.1); }
-  .score-fill { height:100%; transition:width 0.6s ease; }
-  .score-val { font-family:var(--font-pixel); font-size:8px; color:var(--dark); text-align:right; }
+  /* SDG CHIPS */
+  .sdg-grid { display:flex; flex-wrap:wrap; gap:8px; margin:1rem 0; }
+  .sdg-chip { font-family:var(--font-pixel); font-size:7px; padding:7px 11px; border:2px solid var(--dark); background:#fff; line-height:1.6; transition:transform 0.1s,background 0.1s; cursor:default; }
+  .sdg-chip:hover { transform:translate(-2px,-2px); background:var(--dark); color:#fff; }
 
-  /* RISK CARDS */
-  .risk-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin:1.5rem 0; }
-  .risk-card { background:#fff; border:2px solid var(--dark); padding:1.25rem; }
-  .risk-title { font-family:var(--font-pixel); font-size:13px; margin-bottom:0.5rem; line-height:1.9; }
-  .risk-body { font-size:15px; font-weight:300; color:#666; line-height:1.6; }
-  .risk-level { display:inline-block; font-family:var(--font-pixel); font-size:10px; padding:5px 12px; margin-top:8px; }
-  .rl-med { background:var(--px-yellow); color:var(--dark); }
-  .rl-low { background:var(--px-green); color:var(--dark); }
+  /* TAKEAWAY */
+  .takeaway-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
+  @media(max-width:600px){ .takeaway-row { grid-template-columns:1fr; } }
+  .takeaway-card { background:var(--dark); padding:1.5rem; border-left:4px solid; }
+  .takeaway-card:nth-child(1) { border-color:var(--px-green); }
+  .takeaway-card:nth-child(2) { border-color:var(--px-yellow); }
+  .tk-label { font-family:var(--font-pixel); font-size:6px; margin-bottom:0.6rem; }
+  .takeaway-card:nth-child(1) .tk-label { color:var(--px-green); }
+  .takeaway-card:nth-child(2) .tk-label { color:var(--px-yellow); }
+  .tk-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
+  .tk-body strong { color:#fff; font-weight:500; }
 
-  /* RECOMMENDATION */
-  .rec-box { background:var(--dark); padding:2rem; border:2px solid var(--px-green); position:relative; margin:1.5rem 0; }
-  .rec-box::after { content:''; position:absolute; bottom:-7px; right:-7px; width:100%; height:100%; background:var(--px-green); z-index:-1; }
-  .rec-label { font-family:var(--font-pixel); font-size:10px; color:var(--px-green); margin-bottom:0.75rem; }
-  .rec-title { font-family:var(--font-pixel); font-size:clamp(9px,1.3vw,11px); color:#fff; line-height:2; margin-bottom:0.75rem; }
-  .rec-body { font-size:15px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.8; }
-  .rec-outcomes { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.75rem; margin-top:1.25rem; }
-  .rec-outcome { background:rgba(255,255,255,0.06); padding:0.75rem 1rem; border-left:3px solid var(--px-green); }
-  .rec-outcome-num { font-family:var(--font-pixel); font-size:14px; color:var(--px-green); line-height:1; margin-bottom:4px; }
-  .rec-outcome-label { font-size:11px; font-weight:300; color:rgba(255,255,255,0.5); }
-
-  /* REFLECTION */
   .reflection { background:#fff; border:2px solid var(--dark); padding:2rem; position:relative; }
   .reflection::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; background:var(--px-yellow); z-index:-1; }
   .ref-label { font-family:var(--font-pixel); font-size:11px; color:var(--px-yellow); background:var(--dark); display:inline-block; padding:5px 10px; margin-bottom:1rem; }
   .ref-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
   .ref-body strong { font-weight:500; color:var(--dark); }
-
-  /* BACK BTN */
   .back-wrap { text-align:center; padding:3rem 0 4rem; }
   .back-btn { display:inline-block; font-family:var(--font-mono)px; padding:14px 28px; background:var(--dark); color:var(--px-yellow); border:2px solid var(--dark); text-decoration:none; letter-spacing:1px; box-shadow:5px 5px 0 var(--px-yellow); transition:transform 0.1s,box-shadow 0.1s; }
   .back-btn:hover { transform:translate(-3px,-3px); box-shadow:8px 8px 0 var(--px-yellow); }
-  @media(max-width:600px){ .content{padding:2rem 1.25rem;} .hero{padding:3rem 1.5rem 2.5rem;} .score-row{grid-template-columns:90px 1fr 40px;} }
+  @media(max-width:600px){ .content{padding:2rem 1.25rem;} .hero{padding:3rem 1.5rem 2.5rem;} }
 </style>
 </head>
 <body>
@@ -142,124 +112,126 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-eyebrow">CASE STUDY · TEAM PROJECT · CIS 3001</div>
-  <h1 class="hero-title">DIGNIFIED DAYS:<br><span>AI-POWERED CSR</span><br>EFFICIENCY STRATEGY</h1>
-  <p class="hero-sub">A consulting business case for a home hospice equipment provider, evaluating three strategic alternatives to reduce call volume, cut costs, and improve patient experience through AI integration.</p>
+  <div class="hero-eyebrow">RESEARCH PAPER · VIRTUAL EXCHANGE PROJECT · BUSA 4000</div>
+  <h1 class="hero-title">SUSTAINABILITY IN<br><span>COLOMBIA</span>:<br>ENHANCED WEATHERING<br>& RENEWABLE ENERGY</h1>
+  <p class="hero-sub">A cross-university collaboration between GSU and UNIFOR Brazil analyzing two emerging sustainability innovations and their implications for international business, policy, and communities.</p>
   <div class="hero-pills">
-    <div class="hero-pill"><span>COURSE</span>CIS 3001 · Georgia State University</div>
-    <div class="hero-pill"><span>ROLE</span>Executive Summary · MOV · Recommendation</div>
-    <div class="hero-pill"><span>TEAM</span>5 members · April 2026</div>
-    <div class="hero-pill"><span>METHOD</span>NPV Analysis · Weighted Scoring</div>
+    <div class="hero-pill"><span>COURSE</span>BUSA 4000 · Georgia State University</div>
+    <div class="hero-pill"><span>ROLE</span>Team Leader · Coordination & Final Submission</div>
+    <div class="hero-pill"><span>PARTNERS</span>GSU + UNIFOR Brazil · 5 members</div>
+    <div class="hero-pill"><span>CERT</span>International Virtual Exchange Badge</div>
   </div>
 </div>
 
 <div class="content">
 
-  <!-- 01 PROBLEM -->
+  <!-- 01 CONTEXT -->
   <div style="margin-bottom:2.75rem;">
-    <div class="cs-label">01 · THE PROBLEM</div>
-    <div class="problem-box">
-      <div class="problem-half ph-left">
-        <div class="ph-label">THE SITUATION</div>
-        <div class="ph-body">Dignified Days, a home hospice medical equipment provider across GA, AL, and FL, was drowning in <strong>routine CSR calls</strong> about deliveries, returns, and troubleshooting. With an elderly patient population that preferred phone over digital, call volume showed no signs of slowing.</div>
+    <div class="cs-label">01 · CONTEXT</div>
+    <div class="context-split">
+      <div class="ctx-half">
+        <div class="ctx-label">THE COUNTRY</div>
+        <div class="ctx-body">Colombia is one of the world's most <strong>biodiverse nations</strong>, yet faces mounting pressure from deforestation, climate-driven flooding, and soil degradation. With 2.09M hectares of forest lost in 12 years and 25% of the population exposed to flood risk, the urgency for sustainable solutions is real.</div>
       </div>
-      <div class="problem-half ph-right">
-        <div class="ph-label">THE IMPACT</div>
-        <div class="ph-body">CSRs had <strong>no bandwidth left</strong> for high-value work, including insurance coordination, new patient orders, and complex case management. Operational efficiency was suffering and labor costs were climbing.</div>
+      <div class="ctx-half">
+        <div class="ctx-label">THE PROJECT</div>
+        <div class="ctx-body">As part of GSU's International Virtual Exchange program, our team collaborated with students from <strong>UNIFOR Brazil</strong> to analyze two Emerging Technology Innovations (ETIs) and their business, policy, and community implications for Colombia.</div>
       </div>
     </div>
-    <div class="mov-banner">
-      <div class="mov-label">OUR MOV</div>
-      <div class="mov-text">Reduce CSR call volume by 25% within 6 months<br>to cut labor costs and improve first-call resolution.</div>
-    </div>
-  </div>
-
-  <div class="px-divider"></div>
-
-  <!-- 02 SCALE -->
-  <div style="margin-bottom:2.75rem;">
-    <div class="cs-label">02 · SCALE OF THE PROBLEM</div>
-    <div class="cs-body" style="margin-bottom:1rem;">Before recommending a solution, we quantified the problem. The numbers made the urgency clear.</div>
     <div class="stats-row">
-      <div class="stat-box sb-cyan"><div class="sb-label">DAILY CALLS</div><div class="sb-num">500</div><div class="sb-desc">Fielded by just 10 CSRs</div></div>
-      <div class="stat-box sb-green"><div class="sb-label">ANNUAL VOLUME</div><div class="sb-num">125K</div><div class="sb-desc">500 calls × 250 working days</div></div>
-      <div class="stat-box sb-pink"><div class="sb-label">STATUS QUO COST</div><div class="sb-num">$1.6M</div><div class="sb-desc">3-year total if nothing changes</div></div>
+      <div class="stat-box sb-green"><div class="sb-label">FOREST LOST (12 YRS)</div><div class="sb-num">2.09M</div><div class="sb-desc">Hectares, 39% of tree cover</div></div>
+      <div class="stat-box sb-cyan"><div class="sb-label">EMISSION TARGET</div><div class="sb-num">51%</div><div class="sb-desc">Reduction by 2030 (COP26)</div></div>
+      <div class="stat-box sb-yellow"><div class="sb-label">SOLAR INVESTMENT</div><div class="sb-num">$200M</div><div class="sb-desc">Park powering 80,000+ homes</div></div>
+      <div class="stat-box sb-pink"><div class="sb-label">FLOOD RISK</div><div class="sb-num">25%</div><div class="sb-desc">Of population constantly exposed</div></div>
     </div>
   </div>
 
   <div class="px-divider"></div>
 
-  <!-- 03 ANALYSIS -->
+  <!-- 02 THE TWO ETIs -->
   <div style="margin-bottom:2.75rem;">
-    <div class="cs-label">03 · ANALYSIS APPROACH</div>
-    <div class="cs-body" style="margin-bottom:1.25rem;">We evaluated three strategic alternatives using a combination of cost modeling, NPV analysis, and a weighted scoring framework across five criteria.</div>
-    <div class="analysis-intro">
-      <div class="ai-card">
-        <div class="ai-tag">METHOD 01</div>
-        <div class="ai-label">COST MODELING</div>
-        <div class="ai-body">3-year total cost of ownership for each alternative, including implementation, staffing, and ongoing operations.</div>
+    <div class="cs-label">02 · THE TWO ETIs</div>
+    <div class="cs-body" style="margin-bottom:1.25rem;">We each selected an Emerging Technology Innovation tied to Colombia's sustainability challenges. Our team analyzed both in depth, examining the science, the business case, and the path to scale.</div>
+    <div class="eti-grid">
+      <div class="eti-card ec-green">
+        <span class="eti-icon">🪨</span>
+        <div class="eti-title">ENHANCED WEATHERING</div>
+        <div class="eti-body">Crushed silicate rocks spread over farmland react with CO₂ and moisture, converting atmospheric carbon into stable mineral forms. A 4-year U.S. study found 12–16% crop yield increases and up to 10 tons of CO₂ removed per hectare. Colombia's volcanic geology makes it an ideal candidate.</div>
       </div>
-      <div class="ai-card">
-        <div class="ai-tag">METHOD 02</div>
-        <div class="ai-label">NPV ANALYSIS</div>
-        <div class="ai-body">Net present value calculation to compare long-term financial returns across all three alternatives.</div>
-      </div>
-      <div class="ai-card">
-        <div class="ai-tag">METHOD 03</div>
-        <div class="ai-label">WEIGHTED SCORING</div>
-        <div class="ai-body">Scored on cost efficiency, scalability, customer experience, compliance, and implementation feasibility.</div>
+      <div class="eti-card ec-cyan">
+        <span class="eti-icon">☀️</span>
+        <div class="eti-title">RENEWABLE ENERGY TRANSITION</div>
+        <div class="eti-body">Colombia generates ~70% of energy from hydropower, which is vulnerable to climate disruption. The country is pivoting to solar and wind, backed by a $200M solar park in Montería and the Energy Transition Law aligning with Paris Agreement commitments.</div>
       </div>
     </div>
+  </div>
 
-    <div class="cs-label" style="margin-top:2rem;">THREE ALTERNATIVES</div>
-    <table class="alt-table">
-      <thead><tr><th>ALTERNATIVE</th><th>DESCRIPTION</th><th>3-YR COST</th></tr></thead>
+  <div class="px-divider"></div>
+
+  <!-- 03 DRIVERS -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">03 · WHY NOW · FOUR DRIVERS</div>
+    <div class="cs-body" style="margin-bottom:1.25rem;">Four converging forces are making this the right moment for Colombia to act on both ETIs.</div>
+    <div class="driver-grid">
+      <div class="driver-card"><div class="driver-icon">🌿</div><div class="driver-title">ENVIRONMENTAL</div><div class="driver-body">Deforestation, flooding, and soil degradation forcing urgent climate action.</div></div>
+      <div class="driver-card"><div class="driver-icon">💰</div><div class="driver-title">ECONOMIC</div><div class="driver-body">Fossil fuel volatility pushing toward sustainable growth and new job sectors.</div></div>
+      <div class="driver-card"><div class="driver-icon">🌐</div><div class="driver-title">GLOBAL POLICY</div><div class="driver-body">Paris Agreement, COP26, and E2050 strategy creating formal alignment.</div></div>
+      <div class="driver-card"><div class="driver-icon">⚙️</div><div class="driver-title">TECHNOLOGY</div><div class="driver-body">Cheaper solar, better turbines, and improved mineral processing making both ETIs viable at scale.</div></div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 04 STAKEHOLDER IMPACT -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">04 · STAKEHOLDER IMPACT</div>
+    <div class="cs-body" style="margin-bottom:1.25rem;">Who is affected by these two ETIs, and how.</div>
+    <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;">
+      <thead>
+        <tr>
+          <th style="font-family:var(--font-pixel);font-size:7px;background:var(--dark);color:#fff;padding:10px 14px;text-align:left;border:1px solid var(--dark);width:160px;">STAKEHOLDER</th>
+          <th style="font-family:var(--font-pixel);font-size:7px;background:var(--dark);color:#fff;padding:10px 14px;text-align:left;border:1px solid var(--dark);">POSITIVE IMPACTS</th>
+          <th style="font-family:var(--font-pixel);font-size:7px;background:var(--dark);color:#fff;padding:10px 14px;text-align:left;border:1px solid var(--dark);">CHALLENGES</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td><strong>1. Status Quo</strong></td><td>Keep 10 CSRs with minor routing upgrades. Doesn't address root cause of call volume.</td><td>$1,608,000</td></tr>
-        <tr><td><strong>2. Outsource</strong></td><td>Third-party BPO handles inbound calls. Lower cost but introduces HIPAA and quality control risks.</td><td>$1,034,300</td></tr>
-        <tr class="highlight"><td><strong>3. AI Integration</strong><span class="winner">★ RECOMMENDED</span></td><td>AI-powered IVR + SMS chatbot automates top 3 call types. CSR team reduced from 10 to 6.</td><td>$1,200,400</td></tr>
+        <tr>
+          <td style="font-size:13px;font-weight:500;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;color:var(--dark);">Farmers &amp; Rural Communities</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Improved soil quality, higher crop yields, reduced fertilizer costs from enhanced weathering.</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Need technical guidance for rock application; risk of disruption from mining or land use changes.</td>
+        </tr>
+        <tr style="background:rgba(0,0,0,0.02);">
+          <td style="font-size:13px;font-weight:500;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;color:var(--dark);">Government</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Advances climate goals, satisfies international obligations, positions Colombia as a sustainability leader.</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Must regulate rock mining, ensure compliance standards, and fund capital-intensive projects.</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px;font-weight:500;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;color:var(--dark);">Workers &amp; Businesses</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">New jobs in solar/wind construction, maintenance, and EW implementation; new economic sectors emerge.</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Requires reskilling; initial capital investment is high; rural infrastructure gaps remain.</td>
+        </tr>
+        <tr style="background:rgba(0,0,0,0.02);">
+          <td style="font-size:13px;font-weight:500;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;color:var(--dark);">General Public</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Cleaner air, healthier soils, more stable and affordable energy, reduced climate risk.</td>
+          <td style="font-size:15px;font-weight:300;padding:12px 14px;border:1px solid rgba(0,0,0,0.1);vertical-align:top;line-height:1.6;color:#444;">Renewable construction may affect indigenous land or local ecosystems if not carefully managed.</td>
+        </tr>
       </tbody>
     </table>
-
-    <div class="cs-label" style="margin-top:2rem;">WEIGHTED SCORING RESULTS</div>
-    <div class="cs-body" style="margin-bottom:1rem;">Scored out of 5 across all criteria. AI Integration outperformed on every dimension except upfront cost.</div>
-    <div class="score-bars" id="scoreBars"></div>
   </div>
 
   <div class="px-divider"></div>
 
-  <!-- 04 RECOMMENDATION -->
+  <!-- 05 TAKEAWAY -->
   <div style="margin-bottom:2.75rem;">
-    <div class="cs-label">04 · RECOMMENDATION</div>
-    <div class="rec-box">
-      <div class="rec-label">★ RECOMMENDED SOLUTION</div>
-      <div class="rec-title">AI INTEGRATION VIA IVR + SMS CHATBOT (FIVE9)</div>
-      <div class="rec-body">Projected to deflect ~40% of inbound calls, exceeding the 25% MOV target. Reduces CSR headcount from 10 to 6, delivers 24/7 coverage, and scores highest across all weighted criteria. The hybrid human-AI model is non-negotiable in hospice care: empathy can't be automated, and the system was designed with that constraint at the center.</div>
-      <div class="rec-outcomes">
-        <div class="rec-outcome"><div class="rec-outcome-num">40%</div><div class="rec-outcome-label">Call deflection rate</div></div>
-        <div class="rec-outcome"><div class="rec-outcome-num">-4</div><div class="rec-outcome-label">CSR headcount reduction</div></div>
-        <div class="rec-outcome"><div class="rec-outcome-num">24/7</div><div class="rec-outcome-label">Coverage delivered</div></div>
-        <div class="rec-outcome"><div class="rec-outcome-num">4.3/5</div><div class="rec-outcome-label">Weighted score</div></div>
+    <div class="cs-label">05 · KEY TAKEAWAYS</div>
+    <div class="takeaway-row">
+      <div class="takeaway-card">
+        <div class="tk-label">BUSINESS OPPORTUNITY</div>
+        <div class="tk-body">Colombia's sustainability shift is <strong>a business opportunity, not just compliance</strong>. Companies positioning as sustainability partners in agribusiness, energy, or tech services will be best placed for long-term growth.</div>
       </div>
-    </div>
-  </div>
-
-  <div class="px-divider"></div>
-
-  <!-- 05 RISKS -->
-  <div style="margin-bottom:2.75rem;">
-    <div class="cs-label">05 · KEY RISKS & MITIGATIONS</div>
-    <div class="cs-body" style="margin-bottom:1rem;">Two primary risks were identified and addressed in the final recommendation.</div>
-    <div class="risk-grid">
-      <div class="risk-card">
-        <div class="risk-title">CUSTOMER ADOPTION</div>
-        <div class="risk-body">Elderly patients may resist automation. Mitigated by a hybrid model: AI handles routine, humans handle complex and emotional calls. No patient is ever left without a live option.</div>
-        <span class="risk-level rl-med">MEDIUM RISK</span>
-      </div>
-      <div class="risk-card">
-        <div class="risk-title">HIPAA COMPLIANCE</div>
-        <div class="risk-body">AI platform must meet HIPAA standards with encryption and audit trails. Budgeted $8K/year for ongoing compliance reviews and vendor certification requirements.</div>
-        <span class="risk-level rl-low">MANAGED RISK</span>
+      <div class="takeaway-card">
+        <div class="tk-label">PRIMARY BARRIER</div>
+        <div class="tk-body"><strong>Capital availability is the main obstacle to scale</strong> for both ETIs. Without sustained investment and international partnerships, even the most viable technologies stall at the pilot stage.</div>
       </div>
     </div>
   </div>
@@ -271,18 +243,11 @@
     <div class="cs-label">06 · REFLECTION</div>
     <div class="reflection">
       <div class="ref-label">WHAT I LEARNED</div>
-      <div class="ref-body">As <strong>group leader</strong>, my contributions were the <strong>executive summary, MOV definition, and recommendation section</strong>. The biggest insight: in hospice care, the "best" technology isn't the cheapest, since patient demographics and empathy constraints meant the AI solution had to be designed around human fallback, not replace it. I also got hands-on with <strong>NPV calculations, cost modeling, and weighted scoring</strong>, frameworks I want to keep building on. One challenge I found engaging was managing the project as it unfolded across separate deliverables, all while we presented to the class as if we were pursuing real funding for it, which meant constantly re-prioritizing as new pieces came together.</div>
+      <div class="ref-body">As team leader I coordinated across a multi-university, internationally distributed team, managing timelines, integrating sections, and handling final submission. This project is also where I earned my <strong>International Virtual Exchange Badge</strong> from Georgia State University. What stayed with me: <strong>sustainability, economics, and policy are deeply interconnected</strong>. Enhanced weathering isn't just an environmental story, it's an agricultural economics story and a carbon markets story. The story is always in the data.</div>
     </div>
   </div>
 
 </div>
 <div class="back-wrap"><a class="back-btn" href="index.html#projects">← BACK TO PORTFOLIO</a></div>
-<script>
-const scores=[{label:'Status Quo',val:2.30,color:'#F0A0BC'},{label:'Outsourcing',val:3.50,color:'#F0D080'},{label:'AI Solution',val:4.30,color:'#88D87A'}];
-const container=document.getElementById('scoreBars');
-scores.forEach(s=>{const row=document.createElement('div');row.className='score-row';row.innerHTML=`<div class="score-name">${s.label}</div><div class="score-track"><div class="score-fill" data-pct="${(s.val/5)*100}" style="width:0%;background:${s.color};"></div></div><div class="score-val">${s.val}/5</div>`;container.appendChild(row);});
-const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting){document.querySelectorAll('.score-fill').forEach(f=>f.style.width=f.dataset.pct+'%');obs.disconnect();}},{threshold:0.3});
-if(container)obs.observe(container);
-</script>
 </body>
 </html>
