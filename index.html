@@ -878,7 +878,7 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <a href="#" class="nav-resume" onclick="return false;">Resume ↓</a>
+    <a href="Ashlee_Cranmer_-_Resume.pdf" download="Ashlee_Cranmer_Resume.pdf" target="_blank" class="nav-resume">Resume ↓</a>
   </div>
 </nav>
 
@@ -1209,13 +1209,6 @@
 
 </section>
 
-  <div style="position:relative;padding-left:2.5rem;">
-    <div style="position:absolute;left:10px;top:8px;bottom:0;width:2px;background:rgba(255,255,255,0.08);"></div>
-
-    <!-- CHAPTER: NOW -->
-
-  </div>
-</section>
 <!-- PROJECTS -->
 <section id="projects" class="projects-section">
   <div class="section-header">
@@ -1356,7 +1349,7 @@
     <a class="contact-link primary" href="mailto:aacranmer@gmail.com">EMAIL ME</a>
     <a class="contact-link secondary" href="https://www.linkedin.com/in/ashlee-cranmer/" target="_blank">LINKEDIN</a>
     <a class="contact-link secondary" href="tel:4042737314">CALL / TEXT</a>
-    <a class="contact-link secondary" href="#">DOWNLOAD RESUME</a>
+    <a class="contact-link secondary" href="Ashlee_Cranmer_-_Resume.pdf" download="Ashlee_Cranmer_Resume.pdf" target="_blank">DOWNLOAD RESUME</a>
   </div>
 </section>
 
@@ -1374,13 +1367,9 @@
   const ctx = c.getContext('2d');
   const s = 10;
   const P = { Y:'#FFE600', C:'#00F5FF', G:'#39FF14', W:'#ffffff', D:'#1A1A2E', K:'#B44FFF', O:'#FF6B9D' };
-  // abstract pixel deco: three geometric shapes
   const shapes = [
-    // diamond
     [[0,0,0,'Y',0,0,0,0,0,0,0,0],[0,0,'Y','Y','Y',0,0,0,0,0,0,0],['Y','Y','Y','Y','Y','Y',0,0,0,0,0,0],[0,0,'Y','Y','Y',0,0,0,0,0,0,0],[0,0,0,'Y',0,0,0,0,0,0,0,0]],
-    // plus
     [[0,0,0,'C',0,0,0,0],[0,0,0,'C',0,0,0,0],['C','C','C','C','C','C','C','C'],[0,0,0,'C',0,0,0,0],[0,0,0,'C',0,0,0,0]],
-    // small square
     [['G','G','G'],['G',0,'G'],['G','G','G']],
   ];
   const offsets = [[0,0],[4,6],[7,1]];
@@ -1442,17 +1431,17 @@
 /* ── tools grid ── */
 (function() {
   const tools = [
-    { name: 'Microsoft Excel',              color: '#88D87A' },  // Data Analysis
-    { name: 'Power BI',                     color: '#88D87A' },  // Data Analysis
-    { name: 'Python',                       color: '#88D87A' },  // Data Analysis
-    { name: 'Microsoft Office',             color: '#7DDEE8' },  // IT Strategy
-    { name: 'Agile / Scrum',               color: '#C0A0E8' },  // Project Management
-    { name: 'SQL',                          color: '#88D87A' },  // Data Analysis
-    { name: 'Data Cleaning',               color: '#88D87A' },  // Data Analysis
-    { name: 'Risk Assessment',             color: '#F0D080' },  // Operational Thinking
-    { name: 'Smartsheet',                  color: '#C0A0E8' },  // Project Management
-    { name: 'Figma',                       color: '#F0A0BC' },  // UX Design
-    { name: 'Forecasting & Regression Modeling', color: '#88D87A' },  // Data Analysis
+    { name: 'Microsoft Excel',              color: '#88D87A' },
+    { name: 'Power BI',                     color: '#88D87A' },
+    { name: 'Python',                       color: '#88D87A' },
+    { name: 'Microsoft Office',             color: '#7DDEE8' },
+    { name: 'Agile / Scrum',               color: '#C0A0E8' },
+    { name: 'SQL',                          color: '#88D87A' },
+    { name: 'Data Cleaning',               color: '#88D87A' },
+    { name: 'Risk Assessment',             color: '#F0D080' },
+    { name: 'Smartsheet',                  color: '#C0A0E8' },
+    { name: 'Figma',                       color: '#F0A0BC' },
+    { name: 'Forecasting & Regression Modeling', color: '#88D87A' },
   ];
   const grid = document.getElementById('toolsGrid');
   if (!grid) return;
@@ -1496,7 +1485,6 @@ function toggleCoursework() {
     arrow.style.transform = 'rotate(90deg)';
   }
 }
-
 
 </script>
 </body>
