@@ -591,13 +591,13 @@
   .projects-section { background: var(--cream); }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 1.1rem;
   }
   .project-card {
     background: #fff;
     border: 1.5px solid var(--dark);
-    padding: 1.75rem;
+    padding: 1.25rem;
     position: relative;
     text-decoration: none;
     color: inherit;
@@ -616,43 +616,47 @@
   .project-card:hover::after { bottom: -14px; right: -14px; }
   .project-card.pc-cyan::after  { background: #7DDEE8; }
   .project-card.pc-pink::after  { background: #F0A0BC; }
-  .project-card.pc-green::after { background: #C0A0E8; }
+  .project-card.pc-green::after { background: #88D87A; }
   .project-card.pc-yellow::after{ background: #F0D080; }
+  .project-card.pc-purple::after{ background: #C0A0E8; }
+  .project-card.pc-orange::after{ background: #F0B088; }
 
   .pc-type {
     font-family: var(--font-mono);
-    font-size: 9px;
-    padding: 4px 10px;
+    font-size: 8px;
+    padding: 3px 8px;
     display: inline-block;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.85rem;
     border: 1px solid;
     letter-spacing: 0.5px;
   }
   .pc-type.t-cyan   { color: #7DDEE8;  border-color: #7DDEE8; }
   .pc-type.t-pink   { color: #F0A0BC;  border-color: #F0A0BC; }
-  .pc-type.t-green  { color: #C0A0E8;  border-color: #C0A0E8; }
+  .pc-type.t-green  { color: #88D87A;  border-color: #88D87A; }
   .pc-type.t-yellow { color: #F0D080;  border-color: #F0D080; }
+  .pc-type.t-purple { color: #C0A0E8;  border-color: #C0A0E8; }
+  .pc-type.t-orange { color: #F0B088;  border-color: #F0B088; }
 
   .pc-title {
     font-family: var(--font-pixel);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 1.4;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
     color: var(--dark);
   }
   .pc-desc {
-    font-size: 14px;
+    font-size: 12.5px;
     font-weight: 300;
     color: #555;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 0.9rem;
   }
-  .pc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .pc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 0.9rem; }
   .pc-tag {
     font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 3px 8px;
+    font-size: 9px;
+    padding: 2px 7px;
     background: var(--dark);
     color: rgba(255,255,255,0.7);
   }
@@ -762,7 +766,7 @@
   }
   .exp-card.card-data:hover { box-shadow: 0 0 20px rgba(136,216,122,0.25); }
   .exp-card.card-tech:hover { box-shadow: 0 0 20px rgba(125,222,232,0.25); }
-  .exp-card.card-pm:hover   { box-shadow: 0 0 20px rgba(192,160,232,0.25); }
+  .exp-card.card-pm:hover   { box-shadow: 0 0 20px rgba(240,208,128,0.25); }
   .exp-card.card-ux:hover   { box-shadow: 0 0 20px rgba(240,160,188,0.25); }
 
   /* ── Project cards: lift + glow on hover ── */
@@ -770,9 +774,11 @@
     transition: transform 0.18s cubic-bezier(.2,.8,.2,1), box-shadow 0.18s;
   }
   .project-card.pc-cyan:hover  { box-shadow: 0 8px 32px rgba(125,222,232,0.2); }
-  .project-card.pc-green:hover { box-shadow: 0 8px 32px rgba(192,160,232,0.2); }
+  .project-card.pc-green:hover { box-shadow: 0 8px 32px rgba(136,216,122,0.2); }
   .project-card.pc-yellow:hover{ box-shadow: 0 8px 32px rgba(240,208,128,0.2); }
   .project-card.pc-pink:hover  { box-shadow: 0 8px 32px rgba(240,160,188,0.2); }
+  .project-card.pc-purple:hover{ box-shadow: 0 8px 32px rgba(192,160,232,0.2); }
+  .project-card.pc-orange:hover{ box-shadow: 0 8px 32px rgba(240,176,136,0.2); }
 
   /* "VIEW CASE STUDY" arrow slide */
   .pc-cta { transition: gap 0.15s; }
@@ -924,7 +930,7 @@
       <div class="edu-school">GEORGIA STATE<br>UNIVERSITY</div>
       <div class="edu-degree">BBA in Computer Information Systems<br><span style="font-weight:300;color:#777;">Digital Innovation Track</span></div>
       <div class="edu-detail" style="margin-top:0.75rem;">GPA: 3.36 · Atlanta, GA</div>
-      <div class="edu-honor">★ PRESIDENT'S LIST · SUMMER 2025</div>
+      <div class="edu-honor">★ PRESIDENT'S LIST · SUMMER 2025 & 2026</div>
     </div>
   </div>
 </section>
@@ -1221,12 +1227,11 @@
     <a class="project-card pc-cyan" href="dignified-days.html">
       <div class="pc-type t-cyan">IT STRATEGY · DATA</div>
       <div class="pc-title">DIGNIFIED DAYS<br>BUSINESS CASE</div>
-      <div class="pc-desc">A full consulting business case evaluating three strategic alternatives, status quo, outsourcing, and AI integration, to reduce CSR call volume by 25% at a home hospice equipment provider.</div>
+      <div class="pc-desc">A consulting business case weighing status quo, outsourcing, and AI integration to cut CSR call volume 25% at a home hospice provider.</div>
       <div class="pc-tags">
         <span class="pc-tag">Business Case</span>
         <span class="pc-tag">NPV Analysis</span>
         <span class="pc-tag">AI Strategy</span>
-        <span class="pc-tag">HIPAA</span>
       </div>
       <div class="pc-cta">VIEW CASE STUDY</div>
     </a>
@@ -1234,12 +1239,11 @@
     <a class="project-card pc-green" href="colombia-eti.html">
       <div class="pc-type t-green">RESEARCH · SUSTAINABILITY</div>
       <div class="pc-title">COLOMBIA<br>SUSTAINABILITY ETI</div>
-      <div class="pc-desc">A cross-university Virtual Exchange Project with UNIFOR Brazil analyzing two emerging sustainability innovations in Colombia, enhanced weathering and renewable energy transition, and their impact on business, policy, and communities.</div>
+      <div class="pc-desc">A cross-university Virtual Exchange with UNIFOR Brazil analyzing two sustainability innovations and their business and policy impact in Colombia.</div>
       <div class="pc-tags">
         <span class="pc-tag">International Business</span>
         <span class="pc-tag">ESG</span>
         <span class="pc-tag">Policy Analysis</span>
-        <span class="pc-tag">Emerging Markets</span>
       </div>
       <div class="pc-cta">VIEW CASE STUDY</div>
     </a>
@@ -1247,21 +1251,38 @@
     <a class="project-card pc-yellow" href="madd-marketing.html">
       <div class="pc-type t-yellow">MARKETING · STRATEGY</div>
       <div class="pc-title">MADD MARKETING:<br>DIAZ BROTHERS</div>
-      <div class="pc-desc">A full annual marketing plan for a real local restaurant in Norcross, GA, including a SWOT analysis, 4 P's audit, target audience definition, digital & traditional recommendations, and a 12-month implementation roadmap.</div>
+      <div class="pc-desc">A full annual marketing plan for a real Norcross, GA restaurant: SWOT, 4 P's audit, digital & traditional recommendations, and a 12-month roadmap.</div>
       <div class="pc-tags">
         <span class="pc-tag">SWOT Analysis</span>
         <span class="pc-tag">4 P's Framework</span>
         <span class="pc-tag">Digital Strategy</span>
-        <span class="pc-tag">Roadmapping</span>
       </div>
       <div class="pc-cta">VIEW CASE STUDY</div>
     </a>
 
-    <div class="project-card pc-pink" style="opacity:0.35;cursor:default;pointer-events:none;">
-      <div class="pc-type t-pink">COMING SOON</div>
-      <div class="pc-title">MORE ON<br>THE WAY</div>
-      <div class="pc-desc">More projects coming as I continue building out my portfolio with coursework and real-world work. Stay tuned for updates.</div>
-    </div>
+    <a class="project-card pc-purple" href="bosnia-integration.html">
+      <div class="pc-type t-purple">COMMUNICATION · STRATEGY</div>
+      <div class="pc-title">BRIDGE TO SARAJEVO:<br>CROSS-CULTURAL COMMS</div>
+      <div class="pc-desc">A team analysis of the communication gap between a US headquarters and Coca-Cola's Bosnia office, using Hofstede's Dimensions to build strategy recommendations.</div>
+      <div class="pc-tags">
+        <span class="pc-tag">Hofstede's Dimensions</span>
+        <span class="pc-tag">Cross-Cultural Comms</span>
+        <span class="pc-tag">Team Leadership</span>
+      </div>
+      <div class="pc-cta">VIEW CASE STUDY</div>
+    </a>
+
+    <a class="project-card pc-orange" href="donuts-to-go.html">
+      <div class="pc-type t-orange">DECISION ANALYSIS · EXCEL</div>
+      <div class="pc-title">DONUTS TO GO:<br>DECISION MODEL</div>
+      <div class="pc-desc">A four-part Excel workbook comparing current operations, franchising, and a food truck using regression forecasting and five decision-analysis frameworks.</div>
+      <div class="pc-tags">
+        <span class="pc-tag">Regression Forecasting</span>
+        <span class="pc-tag">Decision Analysis</span>
+        <span class="pc-tag">Excel Modeling</span>
+      </div>
+      <div class="pc-cta">VIEW CASE STUDY</div>
+    </a>
 
   </div>
 </section>
@@ -1321,6 +1342,15 @@
         <div style="font-family:var(--font-mono);font-size:9px;color:#555;margin-bottom:0.75rem;letter-spacing:1px;">LINKEDIN</div>
         <div style="font-family:var(--font-pixel);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">Learning SQL<br>Programming</div>
         <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Nov 2025</div>
+      </div>
+    </div>
+
+    <div class="cert-wrapper">
+      <div class="cert-shadow" style="background:var(--px-cyan);"></div>
+      <div class="cert-card" style="background:#fff;border:1.5px solid var(--dark);padding:2.25rem 1.5rem;position:relative;min-height:160px;">
+        <div style="font-family:var(--font-mono);font-size:9px;color:#555;margin-bottom:0.75rem;letter-spacing:1px;">ANTHROPIC</div>
+        <div style="font-family:var(--font-pixel);font-size:14px;font-weight:500;line-height:1.5;margin-bottom:0.75rem;">AI Fluency: Framework<br>& Foundations</div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:#999;">Issued Aug 2026</div>
       </div>
     </div>
 
