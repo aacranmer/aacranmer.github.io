@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridge to Sarajevo · Ashlee Cranmer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root { --cream:#F5F0E8; --dark:#1A1A2E; --px-pink:#F0A0BC; --px-cyan:#7DDEE8; --px-yellow:#F0D080; --px-green:#88D87A; --px-purple:#C0A0E8; --font-pixel:'IBM Plex Mono',monospace; --font-body:'DM Sans',sans-serif; --font-mono:'IBM Plex Mono',monospace; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--cream); color:var(--dark); font-family:var(--font-body); overflow-x:hidden; }
+
+  nav { position:sticky; top:0; z-index:100; background:var(--dark); border-bottom:4px solid var(--px-purple); padding:0 2.5rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
+  .nav-back { font-family:var(--font-pixel); font-size:8px; color:var(--px-purple); text-decoration:none; letter-spacing:1px; transition:opacity 0.15s; }
+  .nav-back:hover { opacity:0.7; }
+  .nav-logo { font-family:var(--font-pixel); font-size:9px; color:var(--px-yellow); }
+
+  .hero { background:var(--dark); padding:4rem 3rem 3rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(192,160,232,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(192,160,232,0.05) 1px,transparent 1px); background-size:32px 32px; }
+  .hero-eyebrow { font-family:var(--font-mono); font-size:10px; color:var(--px-purple); letter-spacing:2px; margin-bottom:1rem; position:relative; }
+  .hero-eyebrow::before { content:'> '; color:rgba(255,255,255,0.4); }
+  .hero-title { font-family:var(--font-pixel); font-size:clamp(22px,3.5vw,36px); font-weight:500; color:#fff; line-height:1.3; margin-bottom:1rem; position:relative; }
+  .hero-title span { color:var(--px-purple); }
+  .hero-sub { font-size:15px; font-weight:300; color:rgba(255,255,255,0.5); max-width:620px; line-height:1.85; margin-bottom:2rem; position:relative; }
+  .hero-pills { display:flex; flex-wrap:wrap; gap:0.75rem; position:relative; }
+  .hero-pill { font-family:var(--font-pixel); font-size:11px; padding:8px 16px; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.75); letter-spacing:1px; }
+  .hero-pill span { color:var(--px-yellow); margin-right:6px; }
+
+  .content { max-width:860px; margin:0 auto; padding:3rem 2rem; }
+  .cs-label { font-family:var(--font-mono); font-size:13px; color:#6A4A9A; letter-spacing:2px; margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
+  .cs-label::after { content:''; flex:1; height:1px; background:rgba(106,74,154,0.25); }
+  .cs-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
+  .cs-body strong { font-weight:500; color:var(--dark); }
+  .px-divider { height:3px; background:repeating-linear-gradient(90deg,var(--dark) 0,var(--dark) 8px,transparent 8px,transparent 16px); opacity:0.1; margin:2.5rem 0; }
+
+  /* CONTEXT SPLIT */
+  .context-split { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.25rem 0; }
+  @media(max-width:600px){ .context-split { grid-template-columns:1fr; } }
+  .ctx-half { padding:1.5rem; border:2px solid var(--dark); background:#fff; position:relative; }
+  .ctx-half::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
+  .ctx-half:nth-child(1)::after { background:var(--px-purple); }
+  .ctx-half:nth-child(2)::after { background:var(--px-cyan); }
+  .ctx-label { font-family:var(--font-pixel); font-size:9px; color:#aaa; margin-bottom:8px; }
+  .ctx-body { font-size:13.5px; font-weight:300; color:#555; line-height:1.75; }
+  .ctx-body strong { color:var(--dark); font-weight:500; }
+
+  /* TEAM STRIP */
+  .team-strip { background:var(--dark); border:2px solid var(--px-purple); padding:1.75rem; margin:1.5rem 0; position:relative; }
+  .team-strip::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; background:var(--px-purple); z-index:-1; }
+  .ts-label { font-family:var(--font-pixel); font-size:9px; color:var(--px-purple); margin-bottom:1rem; }
+  .ts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; }
+  .ts-item-role { font-family:var(--font-pixel); font-size:9px; color:rgba(255,255,255,0.35); margin-bottom:4px; }
+  .ts-item-val { font-family:var(--font-mono); font-size:12px; color:rgba(255,255,255,0.8); line-height:1.6; }
+
+  /* HOFSTEDE CARDS */
+  .dim-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; margin:1.5rem 0; }
+  .dim-card { background:#fff; border:2px solid var(--dark); padding:1.75rem; position:relative; }
+  .dim-card::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; z-index:-1; }
+  .dim-card.dc-purple::after { background:var(--px-purple); }
+  .dim-card.dc-cyan::after { background:var(--px-cyan); }
+  .dim-card.dc-yellow::after { background:var(--px-yellow); }
+  .dim-level { display:inline-block; font-family:var(--font-pixel); font-size:9px; padding:4px 10px; margin-bottom:0.85rem; background:var(--dark); color:var(--px-purple); }
+  .dim-title { font-family:var(--font-pixel); font-size:12px; line-height:1.7; margin-bottom:0.75rem; }
+  .dim-body { font-size:13.5px; font-weight:300; color:#555; line-height:1.75; }
+  .dim-body li { list-style:none; padding:0.15rem 0 0.15rem 1rem; position:relative; }
+  .dim-body li::before { content:'▸'; position:absolute; left:0; font-size:9px; top:6px; color:var(--px-purple); }
+
+  /* COMPARISON TABLE */
+  .comp-table { width:100%; border-collapse:collapse; margin:1.5rem 0; }
+  .comp-table th { font-family:var(--font-pixel); font-size:7px; background:var(--dark); color:#fff; padding:10px 14px; text-align:left; border:1px solid var(--dark); }
+  .comp-table td { font-size:15px; font-weight:300; padding:12px 14px; border:1px solid rgba(0,0,0,0.1); vertical-align:top; line-height:1.65; color:#444; }
+  .comp-table tr:nth-child(even) td { background:rgba(0,0,0,0.02); }
+
+  /* INTERVIEW CARD */
+  .interview-box { background:var(--dark); border-left:4px solid var(--px-yellow); padding:1.75rem 2rem; margin:1.5rem 0; }
+  .iv-who { font-family:var(--font-pixel); font-size:11px; color:var(--px-yellow); margin-bottom:0.5rem; }
+  .iv-role { font-family:var(--font-mono); font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:1.1rem; }
+  .iv-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; }
+  .iv-point-label { font-family:var(--font-pixel); font-size:7px; color:var(--px-cyan); margin-bottom:6px; }
+  .iv-point-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.7; }
+
+  /* RECOMMENDATIONS */
+  .rec-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:1.5rem 0; }
+  .rec-card { background:#fff; border:2px solid var(--dark); padding:1.4rem; position:relative; }
+  .rec-card::after { content:''; position:absolute; bottom:-5px; right:-5px; width:100%; height:100%; z-index:-1; }
+  .rec-card:nth-child(1)::after { background:var(--px-purple); }
+  .rec-card:nth-child(2)::after { background:var(--px-cyan); }
+  .rec-card:nth-child(3)::after { background:var(--px-yellow); }
+  .rec-card:nth-child(4)::after { background:var(--px-green); }
+  .rec-card:nth-child(5)::after { background:var(--px-pink); }
+  .rec-icon { font-size:20px; margin-bottom:0.75rem; display:block; }
+  .rec-title { font-family:var(--font-pixel); font-size:11px; margin-bottom:0.5rem; line-height:1.7; }
+  .rec-body { font-size:13px; font-weight:300; color:#666; line-height:1.6; }
+
+  /* TEAM DYNAMICS */
+  .dyn-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0; }
+  @media(max-width:600px){ .dyn-grid { grid-template-columns:1fr; } }
+  .dyn-card { background:var(--dark); padding:1.5rem; border-left:4px solid; }
+  .dyn-card:nth-child(1) { border-color:var(--px-purple); }
+  .dyn-card:nth-child(2) { border-color:var(--px-yellow); }
+  .dyn-label { font-family:var(--font-pixel); font-size:9px; margin-bottom:0.6rem; }
+  .dyn-card:nth-child(1) .dyn-label { color:var(--px-purple); }
+  .dyn-card:nth-child(2) .dyn-label { color:var(--px-yellow); }
+  .dyn-body { font-size:13.5px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; }
+  .dyn-body strong { color:#fff; font-weight:500; }
+
+  .reflection { background:#fff; border:2px solid var(--dark); padding:2rem; position:relative; }
+  .reflection::after { content:''; position:absolute; bottom:-6px; right:-6px; width:100%; height:100%; background:var(--px-yellow); z-index:-1; }
+  .ref-label { font-family:var(--font-pixel); font-size:11px; color:var(--px-yellow); background:var(--dark); display:inline-block; padding:5px 10px; margin-bottom:1rem; }
+  .ref-body { font-size:15px; font-weight:300; line-height:1.85; color:#444; }
+  .ref-body strong { font-weight:500; color:var(--dark); }
+  .back-wrap { text-align:center; padding:3rem 0 4rem; }
+  .back-btn { display:inline-block; font-family:var(--font-mono)px; padding:14px 28px; background:var(--dark); color:var(--px-yellow); border:2px solid var(--dark); text-decoration:none; letter-spacing:1px; box-shadow:5px 5px 0 var(--px-yellow); transition:transform 0.1s,box-shadow 0.1s; }
+  .back-btn:hover { transform:translate(-3px,-3px); box-shadow:8px 8px 0 var(--px-yellow); }
+  @media(max-width:600px){ .content{padding:2rem 1.25rem;} .hero{padding:3rem 1.5rem 2.5rem;} }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="index.html#projects">← BACK TO PORTFOLIO</a>
+  <div class="nav-logo">AC.EXE</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">TEAM PROJECT · VIRTUAL TEAM SIMULATION · BCOM 3950</div>
+  <h1 class="hero-title">BRIDGE TO SARAJEVO:<br>COCA-COLA'S<br><span>BOSNIA INTEGRATION</span> PLAN</h1>
+  <p class="hero-sub">A cross-cultural communication strategy built for a fictional Coca-Cola office expansion into Bosnia, translating Hofstede's cultural dimensions and a professional interview into practical guidance for U.S. colleagues.</p>
+  <div class="hero-pills">
+    <div class="hero-pill"><span>COURSE</span>BCOM 3950 · Georgia State University</div>
+    <div class="hero-pill"><span>ROLE</span>Lead Facilitator · Coordination & Final Presentation</div>
+    <div class="hero-pill"><span>TEAM</span>Team Bosnia · 6 members</div>
+    <div class="hero-pill"><span>METHOD</span>Hofstede Framework · Personal Interview</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 01 CONTEXT -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">01 · THE SCENARIO</div>
+    <div class="context-split">
+      <div class="ctx-half">
+        <div class="ctx-label">THE SETUP</div>
+        <div class="ctx-body">Our fictional employer, <strong>Coca-Cola</strong>, has just opened its first office in Bosnia. Team Bosnia's job: prepare U.S. colleagues to work effectively with their new remote coworkers.</div>
+      </div>
+      <div class="ctx-half">
+        <div class="ctx-label">THE FORMAT</div>
+        <div class="ctx-body">A <strong>15-minute persuasive presentation</strong>, built entirely as a virtual team, covering cultural dimensions, etiquette, trust-building, and recommendations.</div>
+      </div>
+    </div>
+    <div class="team-strip">
+      <div class="ts-label">TEAM BOSNIA · ROLES & RESPONSIBILITIES</div>
+      <div class="ts-grid">
+        <div><div class="ts-item-role">ASHLEE · LEAD FACILITATOR</div><div class="ts-item-val">Meetings & submissions</div></div>
+        <div><div class="ts-item-role">JONATHAN · RESEARCH COORDINATOR</div><div class="ts-item-val">Research & interviews</div></div>
+        <div><div class="ts-item-role">OBRIAN · VISUAL AID LEAD</div><div class="ts-item-val">Slide design</div></div>
+        <div><div class="ts-item-role">NZINGA · COMM. STRATEGY LEAD</div><div class="ts-item-val">Audience analysis</div></div>
+        <div><div class="ts-item-role">SAFIUL · AGENDAS/MINUTES</div><div class="ts-item-val">Meeting documentation</div></div>
+        <div><div class="ts-item-role">ANDY · SCRIPT LEAD</div><div class="ts-item-val">Description script</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 02 CULTURAL DIMENSIONS -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">02 · CULTURAL DIMENSIONS ANALYSIS</div>
+    <div class="cs-body" style="margin-bottom:1.25rem;">We narrowed Hofstede's framework to the three dimensions most likely to cause real friction for a U.S. manager working with Bosnian colleagues remotely.</div>
+    <div class="dim-grid">
+      <div class="dim-card dc-purple">
+        <span class="dim-level">HIGH</span>
+        <div class="dim-title">POWER DISTANCE</div>
+        <div class="ctx-body">Respect for authority runs deep, decisions flow from leadership down, and titles carry real weight.</div>
+      </div>
+      <div class="dim-card dc-cyan">
+        <span class="dim-level">COLLECTIVIST</span>
+        <div class="dim-title">INDIVIDUALISM VS. COLLECTIVISM</div>
+        <div class="ctx-body">Team harmony and loyalty outweigh individual credit; public disagreement is generally avoided.</div>
+      </div>
+      <div class="dim-card dc-yellow">
+        <span class="dim-level">HIGH-CONTEXT</span>
+        <div class="dim-title">COMMUNICATION STYLE</div>
+        <div class="ctx-body">Tone, relationships, and silence carry as much meaning as the words themselves.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 03 COMMUNICATION STYLES -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">03 · COMMUNICATION STYLES & ETIQUETTE</div>
+    <div class="cs-body" style="margin-bottom:1rem;">The core risk we flagged for U.S. managers: mistaking a quieter, more measured communication style for disengagement.</div>
+    <table class="comp-table">
+      <thead><tr><th>AREA</th><th>AMERICAN EMPLOYEES</th><th>BOSNIAN COLLEAGUES</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Speaking Up</strong></td><td>Open, immediate feedback in meetings.</td><td>Words considered carefully before speaking.</td></tr>
+        <tr><td><strong>Silence</strong></td><td>Often read as disengagement.</td><td>Reflects respect and careful thought, not disinterest.</td></tr>
+        <tr><td><strong>Decision-Making</strong></td><td>Can move quickly within a project team.</td><td>Relationships come first; experienced colleagues are consulted.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 04 INTERVIEW -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">04 · PROFESSIONAL INTERVIEW</div>
+    <div class="cs-body" style="margin-bottom:1rem;">The assignment required a personal interview to ground our research beyond textbooks and articles.</div>
+    <div class="interview-box">
+      <div class="iv-who">SAMIR DELIC</div>
+      <div class="iv-role">Head of Sales, Delta Electronics EMEA · Personal Interview</div>
+      <div class="iv-grid">
+        <div><div class="iv-point-label">RESPECT & HIERARCHY</div><div class="iv-point-body">Age-based respect is procedural: in meetings, the oldest employee speaks first, and input flows down by age.</div></div>
+        <div><div class="iv-point-label">THE MISREAD RISK</div><div class="iv-point-body">Quiet input can look like disengagement to a U.S. manager, but it's often the opposite: commitment shows up as effort, not vocal participation.</div></div>
+        <div><div class="iv-point-label">HIS ADVICE</div><div class="iv-point-body">Be patient, give people time, and let personal connection form first. Professional communication gets much easier after that.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 05 RECOMMENDATIONS -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">05 · RECOMMENDATIONS FOR U.S. COLLEAGUES</div>
+    <div class="cs-body" style="margin-bottom:1.25rem;">We synthesized the research and interview into three concrete actions U.S. employees could take starting day one.</div>
+    <div class="rec-grid">
+      <div class="rec-card"><span class="rec-icon">🎓</span><div class="rec-title">BUILD AWARENESS</div><div class="rec-body">Cultural awareness training before collaboration begins, with active listening over constant verbal participation.</div></div>
+      <div class="rec-card"><span class="rec-icon">🤝</span><div class="rec-title">PAIR FOR PARTNERSHIP</div><div class="rec-body">Pair U.S. and Bosnian employees on projects, and flex leadership style to fit.</div></div>
+      <div class="rec-card"><span class="rec-icon">🌍</span><div class="rec-title">FOSTER INCLUSION</div><div class="rec-body">Create a workplace where everyone feels comfortable contributing, on their own terms.</div></div>
+    </div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 06 TEAM DYNAMICS -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">06 · TEAM DYNAMICS ANALYSIS</div>
+    <div class="cs-body" style="margin-bottom:1rem;">The course also required a written analysis of how our own virtual team functioned.</div>
+    <div class="dyn-grid">
+      <div class="dyn-card">
+        <div class="dyn-label">TEAM CHARTER</div>
+        <div class="dyn-body">Kept meetings regular and timelines clear, but <strong>role enforcement was inconsistent</strong>, and attendance wasn't always punctual.</div>
+      </div>
+      <div class="dyn-card">
+        <div class="dyn-label">BUILDING TRUST</div>
+        <div class="dyn-body"><strong>Getting to know each other personally</strong>, a live group chat for updates, and everyone reliably delivering their piece.</div>
+      </div>
+    </div>
+    <div class="cs-body" style="margin-top:1.25rem;"><strong>Toughest moment:</strong> finding a meeting time that worked for the whole team with our professor. We simply asked, and learned not everyone needed to attend. Next time, we'd plan options further ahead and poll availability early.</div>
+  </div>
+
+  <div class="px-divider"></div>
+
+  <!-- 07 REFLECTION -->
+  <div style="margin-bottom:2.75rem;">
+    <div class="cs-label">07 · REFLECTION</div>
+    <div class="reflection">
+      <div class="ref-label">WHAT I LEARNED</div>
+      <div class="ref-body">As <strong>Lead Facilitator</strong>, I coordinated six people across different schedules toward one deadline. The biggest lesson wasn't about Bosnia, it was about <strong>virtual team management</strong>: a charter only works if its roles get enforced, and the fastest way to unstick a scheduling deadlock is to just ask. On the cultural side, the interview with Samir Delic reframed the project: quiet, measured input is often a sign of <strong>more</strong> commitment, not less, an insight that only comes from talking to someone who's lived it.</div>
+    </div>
+  </div>
+
+</div>
+<div class="back-wrap"><a class="back-btn" href="index.html#projects">← BACK TO PORTFOLIO</a></div>
+</body>
+</html>
